@@ -6,14 +6,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="perf\thread_local_perf.cpp">
+    <ClCompile Include="perf\perf_thread_local.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
-    <ClCompile Include="perf\handle_retirement.cpp">
+    <ClCompile Include="perf\perf_handle_retirement.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
     <ClCompile Include="perf\perf_main.cpp" />
-    <ClCompile Include="perf\logging.cpp">
+    <ClCompile Include="perf\perf_logging.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>

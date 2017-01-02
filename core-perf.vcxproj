@@ -42,10 +42,10 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
   <ItemGroup>
-    <ClCompile Include="perf\handle_retirement.cpp" />
-    <ClCompile Include="perf\logging.cpp" />
+    <ClCompile Include="perf\perf_handle_retirement.cpp" />
+    <ClCompile Include="perf\perf_logging.cpp" />
     <ClCompile Include="perf\perf_main.cpp" />
-    <ClCompile Include="perf\thread_local_perf.cpp" />
+    <ClCompile Include="perf\perf_thread_local.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="perf\ensure_init.hpp" />

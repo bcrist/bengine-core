@@ -6,23 +6,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test\string_interpolation.cpp">
-      <Filter>Tests</Filter>
-    </ClCompile>
-    <ClCompile Include="test\handles.cpp">
-      <Filter>Tests</Filter>
-    </ClCompile>
     <ClCompile Include="test\test_main.cpp" />
-    <ClCompile Include="test\stack_trace.cpp">
+    <ClCompile Include="test\test_handles.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
-    <ClCompile Include="test\inline_executors.cpp">
+    <ClCompile Include="test\test_inline_executors.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
-    <ClCompile Include="test\single_thread_executors.cpp">
+    <ClCompile Include="test\test_single_thread_executors.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
-    <ClCompile Include="test\thread_pool_executors.cpp">
+    <ClCompile Include="test\test_stack_trace.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test\test_string_interpolation.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test\test_thread_pool_executors.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>
