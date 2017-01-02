@@ -100,6 +100,15 @@
     <Filter Include="Source Files\executors">
       <UniqueIdentifier>{f82a78f7-7e12-49c8-aa55-ef6e006f9799}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\memory\allocators">
+      <UniqueIdentifier>{672c55ae-0f6e-4f27-87a3-54b1a88a2261}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\memory\allocators\todo">
+      <UniqueIdentifier>{113b0364-32ec-4bc8-8a27-a00a73e7032e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\memory\allocators">
+      <UniqueIdentifier>{e85e562b-5017-4017-a940-c5206136345f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\pch.hpp">
@@ -381,8 +390,86 @@
     <ClInclude Include="include\memory_status.hpp">
       <Filter>Header Files\memory</Filter>
     </ClInclude>
-    <ClInclude Include="include\type_name.hpp">
-      <Filter>Header Files\memory</Filter>
+    <ClInclude Include="include\a3_affix_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_alignment_discriminator_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_arena_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_bitmapped_chunk_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_counting_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_debug_wrapper_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_fallback_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_freelist_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_logging_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_non_owned.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_owned.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_perf_stat_counter_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_perf_stat_event_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_predicate_discriminator_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_shared.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_size_discriminator_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_stl_alloc.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_thread.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_unsynch.hpp">
+      <Filter>Header Files\memory\allocators\todo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\allocators.hpp">
+      <Filter>Header Files\memory\allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_vmm_alloc.hpp">
+      <Filter>Header Files\memory\allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_base_alloc.hpp">
+      <Filter>Header Files\memory\allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_malloc_alloc.hpp">
+      <Filter>Header Files\memory\allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_null_alloc.hpp">
+      <Filter>Header Files\memory\allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_aligned_malloc_alloc.hpp">
+      <Filter>Header Files\memory\allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_buf_alloc.hpp">
+      <Filter>Header Files\memory\allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="include\a3_static_alloc.hpp">
+      <Filter>Header Files\memory\allocators</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -472,6 +559,9 @@
     </ClCompile>
     <ClCompile Include="src\memory_status.cpp">
       <Filter>Source Files\native\vc_win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\a3_vmm_alloc.cpp">
+      <Filter>Source Files\memory\allocators</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

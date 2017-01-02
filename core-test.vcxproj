@@ -42,6 +42,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
   <ItemGroup>
+    <ClCompile Include="test\test_a3_aligned_malloc_alloc.cpp" />
+    <ClCompile Include="test\test_a3_buf_alloc.cpp" />
+    <ClCompile Include="test\test_a3_malloc_alloc.cpp" />
+    <ClCompile Include="test\test_a3_null_alloc.cpp" />
+    <ClCompile Include="test\test_a3_static_alloc.cpp" />
+    <ClCompile Include="test\test_a3_vmm_alloc.cpp" />
     <ClCompile Include="test\test_inline_executors.cpp" />
     <ClCompile Include="test\test_single_thread_executors.cpp" />
     <ClCompile Include="test\test_stack_trace.cpp" />

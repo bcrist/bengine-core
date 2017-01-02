@@ -54,7 +54,34 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\a3_affix_alloc.hpp" />
+    <ClInclude Include="include\a3_aligned_malloc_alloc.hpp" />
+    <ClInclude Include="include\a3_alignment_discriminator_alloc.hpp" />
+    <ClInclude Include="include\a3_arena_alloc.hpp" />
+    <ClInclude Include="include\a3_base_alloc.hpp" />
+    <ClInclude Include="include\a3_bitmapped_chunk_alloc.hpp" />
+    <ClInclude Include="include\a3_buf_alloc.hpp" />
+    <ClInclude Include="include\a3_counting_alloc.hpp" />
+    <ClInclude Include="include\a3_debug_wrapper_alloc.hpp" />
+    <ClInclude Include="include\a3_fallback_alloc.hpp" />
+    <ClInclude Include="include\a3_freelist_alloc.hpp" />
+    <ClInclude Include="include\a3_logging_alloc.hpp" />
+    <ClInclude Include="include\a3_malloc_alloc.hpp" />
+    <ClInclude Include="include\a3_non_owned.hpp" />
+    <ClInclude Include="include\a3_null_alloc.hpp" />
+    <ClInclude Include="include\a3_owned.hpp" />
+    <ClInclude Include="include\a3_perf_stat_counter_alloc.hpp" />
+    <ClInclude Include="include\a3_perf_stat_event_alloc.hpp" />
+    <ClInclude Include="include\a3_predicate_discriminator_alloc.hpp" />
+    <ClInclude Include="include\a3_shared.hpp" />
+    <ClInclude Include="include\a3_size_discriminator_alloc.hpp" />
+    <ClInclude Include="include\a3_static_alloc.hpp" />
+    <ClInclude Include="include\a3_stl_alloc.hpp" />
+    <ClInclude Include="include\a3_thread.hpp" />
+    <ClInclude Include="include\a3_unsynch.hpp" />
+    <ClInclude Include="include\a3_vmm_alloc.hpp" />
     <ClInclude Include="include\alg.hpp" />
+    <ClInclude Include="include\allocators.hpp" />
     <ClInclude Include="include\autolink.hpp" />
     <ClInclude Include="include\inline_executor.hpp" />
     <ClInclude Include="include\inline_executors.hpp" />
@@ -96,7 +123,6 @@
     <ClInclude Include="include\synchronized_work_queue.hpp" />
     <ClInclude Include="include\thread_pool_executor.hpp" />
     <ClInclude Include="include\thread_pool_executors.hpp" />
-    <ClInclude Include="include\type_name.hpp" />
     <ClInclude Include="include\work_queues.hpp" />
     <ClInclude Include="include\service_atomic.hpp" />
     <ClInclude Include="include\service_io_service_thread_pool.hpp" />
@@ -150,6 +176,7 @@
     <ClInclude Include="include\zlib.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\a3_vmm_alloc.cpp" />
     <ClCompile Include="src\io_service_thread_pool.cpp" />
     <ClCompile Include="src\console_indent.cpp" />
     <ClCompile Include="src\console_color.cpp" />

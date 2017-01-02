@@ -4,6 +4,9 @@
     <Filter Include="Tests">
       <UniqueIdentifier>{2ef94398-bbdc-4619-beb6-7816f83fc8a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tests\allocators">
+      <UniqueIdentifier>{821a0219-aaf6-4050-8067-1ce7dc041a55}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test\test_main.cpp" />
@@ -24,6 +27,24 @@
     </ClCompile>
     <ClCompile Include="test\test_thread_pool_executors.cpp">
       <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test\test_a3_aligned_malloc_alloc.cpp">
+      <Filter>Tests\allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="test\test_a3_buf_alloc.cpp">
+      <Filter>Tests\allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="test\test_a3_malloc_alloc.cpp">
+      <Filter>Tests\allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="test\test_a3_null_alloc.cpp">
+      <Filter>Tests\allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="test\test_a3_static_alloc.cpp">
+      <Filter>Tests\allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="test\test_a3_vmm_alloc.cpp">
+      <Filter>Tests\allocators</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

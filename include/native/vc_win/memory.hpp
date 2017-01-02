@@ -6,7 +6,7 @@
 
 #ifdef BE_DEBUG
 #  ifndef BE_NO_LEAKCHECK
-//#     include <vld.h> // TODO re-enable when VLD fix for win10 is released
+#    include <vld.h> 
 #  endif
 #  define BE_ALIGNED_ALLOC(alignment, size) _aligned_malloc_dbg(size, alignment, __FILE__, __LINE__)
 #  define BE_ALIGNED_REALLOC(alignment, ptr, new_size) _aligned_realloc_dbg(ptr, new_size, alignment, __FILE__, __LINE__)
