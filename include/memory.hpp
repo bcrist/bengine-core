@@ -33,19 +33,6 @@ protected:
 using Immovable = immovable_detail::Immovable;
 using Movable = immovable_detail::Movable;
 
-struct MemoryStatus {
-   U64 available;
-   U64 total;
-};
-
-struct DeviceMemoryStatus {
-   MemoryStatus physical;
-   MemoryStatus vmm;
-};
-
-DeviceMemoryStatus system_memory_status();
-U64 largest_available_system_memory_block();
-
 using UC = unsigned char;
 using SC = signed char;
 

@@ -74,6 +74,7 @@
     <ClInclude Include="include\lifecycle.hpp" />
     <ClInclude Include="include\io_service.hpp" />
     <ClInclude Include="include\macros.hpp" />
+    <ClInclude Include="include\memory_status.hpp" />
     <ClInclude Include="include\native\generic\memory.hpp" />
     <ClInclude Include="include\native\vc_win\builtins.hpp" />
     <ClInclude Include="include\native\vc_win\console_color.hpp" />
@@ -95,6 +96,7 @@
     <ClInclude Include="include\synchronized_work_queue.hpp" />
     <ClInclude Include="include\thread_pool_executor.hpp" />
     <ClInclude Include="include\thread_pool_executors.hpp" />
+    <ClInclude Include="include\type_name.hpp" />
     <ClInclude Include="include\work_queues.hpp" />
     <ClInclude Include="include\service_atomic.hpp" />
     <ClInclude Include="include\service_io_service_thread_pool.hpp" />
@@ -157,6 +159,7 @@
     <ClCompile Include="src\lifecycle.cpp" />
     <ClCompile Include="src\log.cpp" />
     <ClCompile Include="src\log_expr_ops.cpp" />
+    <ClCompile Include="src\memory_status.cpp" />
     <ClCompile Include="src\native\generic\utf16_widen_narrow.cpp" />
     <ClCompile Include="src\native\vc_win\console.cpp" />
     <ClCompile Include="src\native\vc_win\console_color.cpp" />

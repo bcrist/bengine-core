@@ -378,6 +378,12 @@
     <ClInclude Include="include\service_priority_thread_pool_executor.hpp">
       <Filter>Header Files\executors\services</Filter>
     </ClInclude>
+    <ClInclude Include="include\memory_status.hpp">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\type_name.hpp">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -463,6 +469,9 @@
     </ClCompile>
     <ClCompile Include="src\service_simple_single_thread_executor.cpp">
       <Filter>Source Files\executors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\memory_status.cpp">
+      <Filter>Source Files\native\vc_win</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
