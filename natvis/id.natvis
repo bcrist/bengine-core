@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+	<Type Name="be::Id">
+		<DisplayString>{ id_,x }</DisplayString>
+	</Type>
+
+  <Type Name="be::NamespacedId">
+    <DisplayString>{{ { ns,x } | { id,x } }}</DisplayString>
+  </Type>
+  
+</AutoVisualizer>
+

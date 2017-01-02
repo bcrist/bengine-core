@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>core</ProjectName>
+    <RootNamespace>core</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectGuid>{2DE5BCE4-228A-428D-9C6F-7F4B376FBD7B}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <Import Project="$(SolutionDir)msvc_common.props" />
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <Import Project="$(SolutionDir)msvc_common.props" />
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>BE_CORE_IMPL;BE_NO_PCH_CORE_INCLUDES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>BE_CORE_IMPL;BE_NO_PCH_CORE_INCLUDES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\alg.hpp" />
+    <ClInclude Include="include\autolink.hpp" />
+    <ClInclude Include="include\inline_executor.hpp" />
+    <ClInclude Include="include\inline_executors.hpp" />
+    <ClInclude Include="include\io_service_thread_pool.hpp" />
+    <ClInclude Include="include\be.hpp" />
+    <ClInclude Include="include\buf.hpp" />
+    <ClInclude Include="include\builtins.hpp" />
+    <ClInclude Include="include\byte_order.hpp" />
+    <ClInclude Include="include\console.hpp" />
+    <ClInclude Include="include\console_color.hpp" />
+    <ClInclude Include="include\console_indent.hpp" />
+    <ClInclude Include="include\console_log_sink.hpp" />
+    <ClInclude Include="include\const_handle.hpp" />
+    <ClInclude Include="include\core_autolink.hpp" />
+    <ClInclude Include="include\exceptions.hpp" />
+    <ClInclude Include="include\id_collision_handler.hpp" />
+    <ClInclude Include="include\lifecycle.hpp" />
+    <ClInclude Include="include\io_service.hpp" />
+    <ClInclude Include="include\macros.hpp" />
+    <ClInclude Include="include\native\generic\memory.hpp" />
+    <ClInclude Include="include\native\vc_win\builtins.hpp" />
+    <ClInclude Include="include\native\vc_win\console_color.hpp" />
+    <ClInclude Include="include\native\vc_win\memory.hpp" />
+    <ClInclude Include="include\native\vc_win\stack_trace.hpp" />
+    <ClInclude Include="include\native\vc_win\vc_win.hpp" />
+    <ClInclude Include="include\native\vc_win\vc_win_win32.hpp" />
+    <ClInclude Include="include\ostream_config.hpp" />
+    <ClInclude Include="include\service_priority_inline_executor.hpp" />
+    <ClInclude Include="include\service_priority_single_thread_executor.hpp" />
+    <ClInclude Include="include\service_priority_thread_pool_executor.hpp" />
+    <ClInclude Include="include\service_simple_inline_executor.hpp" />
+    <ClInclude Include="include\service_simple_single_thread_executor.hpp" />
+    <ClInclude Include="include\service_simple_thread_pool_executor.hpp" />
+    <ClInclude Include="include\service_thread_local_priority_inline_executor.hpp" />
+    <ClInclude Include="include\service_thread_local_simple_inline_executor.hpp" />
+    <ClInclude Include="include\single_thread_executors.hpp" />
+    <ClInclude Include="include\single_thread_executor.hpp" />
+    <ClInclude Include="include\synchronized_work_queue.hpp" />
+    <ClInclude Include="include\thread_pool_executor.hpp" />
+    <ClInclude Include="include\thread_pool_executors.hpp" />
+    <ClInclude Include="include\work_queues.hpp" />
+    <ClInclude Include="include\service_atomic.hpp" />
+    <ClInclude Include="include\service_io_service_thread_pool.hpp" />
+    <ClInclude Include="include\service_mutex.hpp" />
+    <ClInclude Include="include\stack_trace.hpp" />
+    <ClInclude Include="include\stack_trace_exception.hpp" />
+    <ClInclude Include="include\t_container_types.hpp" />
+    <ClInclude Include="include\ids.hpp" />
+    <ClInclude Include="include\filesystem.hpp" />
+    <ClInclude Include="include\handle.hpp" />
+    <ClInclude Include="include\handleable.hpp" />
+    <ClInclude Include="include\handle_base.hpp" />
+    <ClInclude Include="include\handle_manager.hpp" />
+    <ClInclude Include="include\pair_value_iterators.hpp" />
+    <ClInclude Include="include\log_attrib_ids.hpp" />
+    <ClInclude Include="include\log_handle.hpp" />
+    <ClInclude Include="include\mutable_handle_base.hpp" />
+    <ClInclude Include="include\native.hpp" />
+    <ClInclude Include="include\service_helpers.hpp" />
+    <ClInclude Include="include\service_ids.hpp" />
+    <ClInclude Include="include\service_io_service.hpp" />
+    <ClInclude Include="include\log.hpp" />
+    <ClInclude Include="include\log_expr.hpp" />
+    <ClInclude Include="include\logging.hpp" />
+    <ClInclude Include="include\log_expr_ops.hpp" />
+    <ClInclude Include="include\log_post.hpp" />
+    <ClInclude Include="include\log_processor.hpp" />
+    <ClInclude Include="include\log_record.hpp" />
+    <ClInclude Include="include\service_log.hpp" />
+    <ClInclude Include="include\memory.hpp" />
+    <ClInclude Include="include\pch.hpp" />
+    <ClInclude Include="include\service.hpp" />
+    <ClInclude Include="include\services.hpp" />
+    <ClInclude Include="include\service_manager.hpp" />
+    <ClInclude Include="include\small_pair.hpp" />
+    <ClInclude Include="include\small_triplet.hpp" />
+    <ClInclude Include="include\source_handle.hpp" />
+    <ClInclude Include="include\string_interpolation.hpp" />
+    <ClInclude Include="include\t_is_container.hpp" />
+    <ClInclude Include="include\t_is_iterator.hpp" />
+    <ClInclude Include="include\t_is_same_size.hpp" />
+    <ClInclude Include="include\t_is_seed_seq.hpp" />
+    <ClInclude Include="include\t_is_simple_alloc.hpp" />
+    <ClInclude Include="include\t_pred.hpp" />
+    <ClInclude Include="include\t_select.hpp" />
+    <ClInclude Include="include\time.hpp" />
+    <ClInclude Include="include\utf16_widen_narrow.hpp" />
+    <ClInclude Include="include\verbosity.hpp" />
+    <ClInclude Include="include\work_queue_traits.hpp" />
+    <ClInclude Include="include\wrapped_allocator.hpp" />
+    <ClInclude Include="include\zlib.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\io_service_thread_pool.cpp" />
+    <ClCompile Include="src\console_indent.cpp" />
+    <ClCompile Include="src\console_color.cpp" />
+    <ClCompile Include="src\console_log_sink.cpp" />
+    <ClCompile Include="src\ids.cpp" />
+    <ClCompile Include="src\id_collision_handler.cpp" />
+    <ClCompile Include="src\lifecycle.cpp" />
+    <ClCompile Include="src\log.cpp" />
+    <ClCompile Include="src\log_expr_ops.cpp" />
+    <ClCompile Include="src\native\generic\utf16_widen_narrow.cpp" />
+    <ClCompile Include="src\native\vc_win\console.cpp" />
+    <ClCompile Include="src\native\vc_win\console_color.cpp" />
+    <ClCompile Include="src\native\vc_win\lifecycle.cpp" />
+    <ClCompile Include="src\native\vc_win\memory.cpp" />
+    <ClCompile Include="src\native\vc_win\native.cpp" />
+    <ClCompile Include="src\native\vc_win\stack_trace.cpp" />
+    <ClCompile Include="src\native\vc_win\time.cpp" />
+    <ClCompile Include="src\native\vc_win\utf16_widen_narrow.cpp" />
+    <ClCompile Include="src\native\vc_win\filesystem.cpp" />
+    <ClCompile Include="src\service_io_service_thread_pool.cpp" />
+    <ClCompile Include="src\service_io_service.cpp" />
+    <ClCompile Include="src\log_processor.cpp" />
+    <ClCompile Include="src\service_log.cpp" />
+    <ClCompile Include="src\pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\service_simple_single_thread_executor.cpp" />
+    <ClCompile Include="src\stack_trace.cpp" />
+    <ClCompile Include="src\time.cpp" />
+    <ClCompile Include="src\zlib.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\buf.inl" />
+    <None Include="include\handle_base.inl" />
+    <None Include="include\handle_manager.inl" />
+    <None Include="include\source_handle.inl" />
+    <None Include="include\string_interpolation.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="natvis\glm.natvis" />
+    <Natvis Include="natvis\gsl.natvis" />
+    <Natvis Include="natvis\id.natvis" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+	<Type Name="gsl::basic_string_span&lt;char,-1&gt;">
+		<DisplayString>{span_.data_,[span_.bounds_.m_ranges.m_bound]}</DisplayString>
+		<StringView>span_.data_,[span_.bounds_.m_ranges.m_bound]</StringView>
+	</Type>
+
+  <Type Name="gsl::basic_string_span&lt;const char,-1&gt;">
+    <DisplayString>{span_.data_,[span_.bounds_.m_ranges.m_bound]}</DisplayString>
+    <StringView>span_.data_,[span_.bounds_.m_ranges.m_bound]</StringView>
+  </Type>
+  
+</AutoVisualizer>

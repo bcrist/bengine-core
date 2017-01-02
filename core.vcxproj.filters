@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Natvis">
+      <UniqueIdentifier>{2d51b673-512d-4513-8d6f-fcf03172239f}</UniqueIdentifier>
+      <Extensions>natvis</Extensions>
+    </Filter>
+    <Filter Include="Header Files\services">
+      <UniqueIdentifier>{c43c486a-a101-4785-9025-76c6aaa671c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\logging">
+      <UniqueIdentifier>{b876e291-47b1-4a09-8a7e-0c513d581428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\logging">
+      <UniqueIdentifier>{14e63ab8-31c9-41b9-b31a-5524133bb9ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\services\impl">
+      <UniqueIdentifier>{d3eaccbd-a988-4df6-99ce-9c6012a08942}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\compression">
+      <UniqueIdentifier>{c439da4c-8490-446b-854d-a9233eaf8fc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\compression">
+      <UniqueIdentifier>{070c6a34-733f-4241-84f1-74686878d0e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\memory">
+      <UniqueIdentifier>{0ec07515-5ebd-4ac1-a9c3-a409406cba60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\time">
+      <UniqueIdentifier>{cea065a8-64d1-4b92-b24a-e2cf7ef2cb2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\handles">
+      <UniqueIdentifier>{9f7a36a1-4820-4e3d-8463-a7c85a1d0e83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\handles\detail">
+      <UniqueIdentifier>{7dc6f00f-eae5-4408-a9b3-78563e5b44ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\time">
+      <UniqueIdentifier>{1aef3433-4fb4-412d-98e5-3fff08a48c97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\templates">
+      <UniqueIdentifier>{5889644c-e5b2-490f-a8cc-f0f15b64ad2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EBCO utils">
+      <UniqueIdentifier>{a3e240cd-b1ce-4193-8f60-5f3a76cdbeeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\iterator adapters">
+      <UniqueIdentifier>{0bcf465b-b2ae-4d44-99d3-2a2fd291125a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\strings">
+      <UniqueIdentifier>{ec26dadb-4eba-45b8-a0fc-edda83893e9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\native">
+      <UniqueIdentifier>{9e504edd-e506-43ae-bfff-92b2f6729186}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\native\vc_win">
+      <UniqueIdentifier>{03969a9e-4e27-4432-9be0-70cf10a03bf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\native\generic">
+      <UniqueIdentifier>{3518b4c6-94e8-4f50-a3b2-3a241be0a308}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\native">
+      <UniqueIdentifier>{5071e244-20ba-4d81-ac67-ac4138f0142a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\native\generic">
+      <UniqueIdentifier>{1fa03bc8-88cf-400e-abf3-a6db0cf55575}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\native\vc_win">
+      <UniqueIdentifier>{913b8d02-bf80-4059-b192-839177eb1606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\console">
+      <UniqueIdentifier>{0bc081e4-47dc-4ae6-8d31-2842a45c8365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\console">
+      <UniqueIdentifier>{57b5722e-92b8-43df-a78a-a5cda4a24cda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\memory">
+      <UniqueIdentifier>{c803551a-dbcc-4013-8a78-1c134976e91a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\io">
+      <UniqueIdentifier>{912ff0d7-10c4-4743-b639-d0f77aef6b91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\io">
+      <UniqueIdentifier>{45e5cc63-0065-4479-a87f-782d44ac5664}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\executors">
+      <UniqueIdentifier>{e20be8ef-49b1-4164-8b48-640be531e0a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\executors\services">
+      <UniqueIdentifier>{e29eacea-6b82-4776-9392-9b8fd3fb2f87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\executors">
+      <UniqueIdentifier>{f82a78f7-7e12-49c8-aa55-ef6e006f9799}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\pch.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\be.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service.hpp">
+      <Filter>Header Files\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_manager.hpp">
+      <Filter>Header Files\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\verbosity.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\log_expr.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\log.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\log_record.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\log_processor.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\log_expr_ops.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\console_log_sink.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_helpers.hpp">
+      <Filter>Header Files\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\log_post.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\log_handle.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_ids.hpp">
+      <Filter>Header Files\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\log_attrib_ids.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\string_interpolation.hpp">
+      <Filter>Header Files\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="include\zlib.hpp">
+      <Filter>Header Files\compression</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utf16_widen_narrow.hpp">
+      <Filter>Header Files\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="include\buf.hpp">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory.hpp">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\time.hpp">
+      <Filter>Header Files\time</Filter>
+    </ClInclude>
+    <ClInclude Include="include\builtins.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\byte_order.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\handleable.hpp">
+      <Filter>Header Files\handles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\handle.hpp">
+      <Filter>Header Files\handles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\const_handle.hpp">
+      <Filter>Header Files\handles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\handle_manager.hpp">
+      <Filter>Header Files\handles\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mutable_handle_base.hpp">
+      <Filter>Header Files\handles\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\handle_base.hpp">
+      <Filter>Header Files\handles\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\source_handle.hpp">
+      <Filter>Header Files\handles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_pred.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_select.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_is_iterator.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_is_container.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\filesystem.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_is_seed_seq.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_is_same_size.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\small_triplet.hpp">
+      <Filter>Header Files\EBCO utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\small_pair.hpp">
+      <Filter>Header Files\EBCO utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_is_simple_alloc.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pair_value_iterators.hpp">
+      <Filter>Header Files\iterator adapters</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_container_types.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wrapped_allocator.hpp">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\native\generic\memory.hpp">
+      <Filter>Header Files\native\generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\native\vc_win\builtins.hpp">
+      <Filter>Header Files\native\vc_win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\native\vc_win\memory.hpp">
+      <Filter>Header Files\native\vc_win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\native\vc_win\vc_win.hpp">
+      <Filter>Header Files\native\vc_win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\io_service.hpp">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\native.hpp">
+      <Filter>Header Files\native</Filter>
+    </ClInclude>
+    <ClInclude Include="include\native\vc_win\vc_win_win32.hpp">
+      <Filter>Header Files\native\vc_win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_mutex.hpp">
+      <Filter>Header Files\services\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\alg.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\console.hpp">
+      <Filter>Header Files\console</Filter>
+    </ClInclude>
+    <ClInclude Include="include\console_color.hpp">
+      <Filter>Header Files\console</Filter>
+    </ClInclude>
+    <ClInclude Include="include\console_indent.hpp">
+      <Filter>Header Files\console</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ostream_config.hpp">
+      <Filter>Header Files\console</Filter>
+    </ClInclude>
+    <ClInclude Include="include\autolink.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\core_autolink.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\macros.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stack_trace.hpp">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stack_trace_exception.hpp">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\exceptions.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\native\vc_win\stack_trace.hpp">
+      <Filter>Header Files\native\vc_win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_atomic.hpp">
+      <Filter>Header Files\services\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logging.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\services.hpp">
+      <Filter>Header Files\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ids.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\lifecycle.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\id_collision_handler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\native\vc_win\console_color.hpp">
+      <Filter>Header Files\native\vc_win</Filter>
+    </ClInclude>
+    <ClInclude Include="include\io_service_thread_pool.hpp">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_log.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_io_service_thread_pool.hpp">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_io_service.hpp">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\synchronized_work_queue.hpp">
+      <Filter>Header Files\executors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\work_queues.hpp">
+      <Filter>Header Files\executors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\work_queue_traits.hpp">
+      <Filter>Header Files\executors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\inline_executor.hpp">
+      <Filter>Header Files\executors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\single_thread_executor.hpp">
+      <Filter>Header Files\executors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\single_thread_executors.hpp">
+      <Filter>Header Files\executors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\inline_executors.hpp">
+      <Filter>Header Files\executors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\thread_pool_executor.hpp">
+      <Filter>Header Files\executors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\thread_pool_executors.hpp">
+      <Filter>Header Files\executors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_priority_inline_executor.hpp">
+      <Filter>Header Files\executors\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_priority_single_thread_executor.hpp">
+      <Filter>Header Files\executors\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_simple_inline_executor.hpp">
+      <Filter>Header Files\executors\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_simple_single_thread_executor.hpp">
+      <Filter>Header Files\executors\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_thread_local_priority_inline_executor.hpp">
+      <Filter>Header Files\executors\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_thread_local_simple_inline_executor.hpp">
+      <Filter>Header Files\executors\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_simple_thread_pool_executor.hpp">
+      <Filter>Header Files\executors\services</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_priority_thread_pool_executor.hpp">
+      <Filter>Header Files\executors\services</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\log_processor.cpp">
+      <Filter>Source Files\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="src\log_expr_ops.cpp">
+      <Filter>Source Files\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="src\log.cpp">
+      <Filter>Source Files\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="src\console_log_sink.cpp">
+      <Filter>Source Files\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="src\zlib.cpp">
+      <Filter>Source Files\compression</Filter>
+    </ClCompile>
+    <ClCompile Include="src\time.cpp">
+      <Filter>Source Files\time</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\generic\utf16_widen_narrow.cpp">
+      <Filter>Source Files\native\generic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\memory.cpp">
+      <Filter>Source Files\native\vc_win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\time.cpp">
+      <Filter>Source Files\native\vc_win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\utf16_widen_narrow.cpp">
+      <Filter>Source Files\native\vc_win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\native.cpp">
+      <Filter>Source Files\native\vc_win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\console_color.cpp">
+      <Filter>Source Files\native\vc_win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\console_color.cpp">
+      <Filter>Source Files\console</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\console.cpp">
+      <Filter>Source Files\native\vc_win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\console_indent.cpp">
+      <Filter>Source Files\console</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\filesystem.cpp">
+      <Filter>Source Files\native\vc_win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\stack_trace.cpp">
+      <Filter>Source Files\native\vc_win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stack_trace.cpp">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ids.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lifecycle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\id_collision_handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\lifecycle.cpp">
+      <Filter>Source Files\native\vc_win</Filter>
+    </ClCompile>
+    <ClCompile Include="src\io_service_thread_pool.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\service_io_service_thread_pool.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\service_io_service.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\service_log.cpp">
+      <Filter>Source Files\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="src\service_simple_single_thread_executor.cpp">
+      <Filter>Source Files\executors</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\string_interpolation.inl">
+      <Filter>Header Files\strings</Filter>
+    </None>
+    <None Include="include\buf.inl">
+      <Filter>Header Files\memory</Filter>
+    </None>
+    <None Include="include\handle_manager.inl">
+      <Filter>Header Files\handles\detail</Filter>
+    </None>
+    <None Include="include\handle_base.inl">
+      <Filter>Header Files\handles\detail</Filter>
+    </None>
+    <None Include="include\source_handle.inl">
+      <Filter>Header Files\handles</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="natvis\glm.natvis">
+      <Filter>Natvis</Filter>
+    </Natvis>
+    <Natvis Include="natvis\id.natvis">
+      <Filter>Natvis</Filter>
+    </Natvis>
+    <Natvis Include="natvis\gsl.natvis">
+      <Filter>Natvis</Filter>
+    </Natvis>
+  </ItemGroup>
+</Project>

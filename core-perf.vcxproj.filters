@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{027a190c-fa05-4ef5-9a0e-494cba6dd583}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="perf\thread_local_perf.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="perf\handle_retirement.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="perf\perf_main.cpp" />
+    <ClCompile Include="perf\logging.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="perf\ensure_init.hpp" />
+    <ClInclude Include="perf\blackhole_log.hpp" />
+  </ItemGroup>
+</Project>
