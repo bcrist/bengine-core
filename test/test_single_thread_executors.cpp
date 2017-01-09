@@ -1,7 +1,7 @@
 #ifdef BE_TEST
 
 #include "single_thread_executors.hpp"
-#include <catch.hpp>
+#include <catch/catch.hpp>
 
 #define BE_CATCH_TAGS "[core][core:executor][core:executor:single-thread]"
 

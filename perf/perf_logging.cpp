@@ -1,6 +1,6 @@
 #ifdef BE_TEST_PERF
 
-#include <catch.hpp>
+#include <catch/catch.hpp>
 #include "ensure_init.hpp"
 #include "blackhole_log.hpp"
 #include "time.hpp"

@@ -1,7 +1,7 @@
 #ifdef BE_TEST
 
 #include "thread_pool_executors.hpp"
-#include <catch.hpp>
+#include <catch/catch.hpp>
 
 #define BE_CATCH_TAGS "[core][core:executor][core:executor:thread-pool]"
 

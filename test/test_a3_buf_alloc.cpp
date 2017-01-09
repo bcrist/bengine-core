@@ -1,7 +1,7 @@
 //#ifdef BE_TEST
 //
 //#include "a3_buf_alloc.hpp"
-//#include <catch.hpp>
+//#include <catch/catch.hpp>
 //
 //#define BE_CATCH_TAGS "[core][core:a3][core:a3:BufAlloc]"
 //

@@ -4,7 +4,7 @@
 #include "stack_trace_exception.hpp"
 #include <be/core/filesystem.hpp>
 #include <be/core/logging.hpp>
-#include <catch.hpp>
+#include <catch/catch.hpp>
 #include <iostream>
 
 #define BE_CATCH_TAGS "[core][core:stacktrace]"

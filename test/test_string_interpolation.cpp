@@ -1,7 +1,7 @@
 #ifdef BE_TEST
 
 #include "string_interpolation.hpp"
-#include <catch.hpp>
+#include <catch/catch.hpp>
 #include <type_traits>
 
 #define BE_CATCH_TAGS "[core][core:string]"

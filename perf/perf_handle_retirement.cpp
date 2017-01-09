@@ -1,6 +1,6 @@
 #ifdef BE_TEST_PERF
 
-#include <catch.hpp>
+#include <catch/catch.hpp>
 #include "source_handle.hpp"
 #include "const_handle.hpp"
 #include "handle.hpp"

@@ -1,7 +1,7 @@
 #ifdef BE_TEST
 
 #include "inline_executors.hpp"
-#include <catch.hpp>
+#include <catch/catch.hpp>
 
 #define BE_CATCH_TAGS "[core][core:executor][core:executor:inline]"
 

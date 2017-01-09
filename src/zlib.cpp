@@ -1,7 +1,7 @@
 #include "pch.hpp"
 #include "zlib.hpp"
 #include "byte_order.hpp"
-#include <zlib.h>
+#include <zlib/zlib.h>
 
 namespace be {
 namespace {

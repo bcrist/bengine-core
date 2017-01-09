@@ -2,7 +2,7 @@
 //
 //#if defined(BE_TEST_PERF)
 //
-//#include <catch.hpp>
+//#include <catch/catch.hpp>
 //#include <Windows.h>
 //#include <random>
 //
