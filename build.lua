@@ -1,20 +1,4 @@
 module 'core' {
-   lib '-id' {
-      src 'src/id.cpp',
-      src 'src/namespaced_id.cpp',
-      define 'BE_CORE_ID_IMPL',
-      define 'BE_CORE_IMPL'
-   },
-   lib '-id-with-names' {
-      src 'src/id.cpp',
-      src 'src/namespaced_id.cpp',
-      define {
-         'BE_CORE_ID_IMPL',
-         'BE_CORE_IMPL',
-         'BE_ID_NAMES_ENABLED'
-      },
-      export_define 'BE_ID_NAMES_ENABLED'
-   },
    lib {
       limp 'include/log_attrib_ids.hpp',
       limp 'include/service_ids.hpp',
@@ -26,22 +10,36 @@ module 'core' {
          exclude 'src/namespaced_id.cpp'
       },
       pch_src 'src/pch.cpp',
-      define 'BE_CORE_IMPL'
+      define 'BE_CORE_IMPL',
+      link_project 'zlib-static'
+   },
+   lib '-id' {
+      src 'src/id.cpp',
+      src 'src/namespaced_id.cpp',
+      define 'BE_CORE_ID_IMPL',
+      define 'BE_CORE_IMPL',
+      link_project 'core'
+
+   },
+   lib '-id-with-names' {
+      src 'src/id.cpp',
+      src 'src/namespaced_id.cpp',
+      define {
+         'BE_CORE_ID_IMPL',
+         'BE_CORE_IMPL',
+         'BE_ID_NAMES_ENABLED'
+      },
+      export_define 'BE_ID_NAMES_ENABLED',
+      link_project 'core'
    },
    app '-test' {
       icon 'icon/bengine-test-perf.ico',
-      link_project {
-         'testing',
-         'core',
-         'core-id'
-      }
+      link_project 'testing'
    },
    app '-perf' {
       icon 'icon/bengine-test-perf.ico',
       link_project {
-         'testing',
-         'core',
-         'core-id'
+         'testing', 'perf'
       }
    }
 }
