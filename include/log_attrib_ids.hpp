@@ -1,4 +1,4 @@
-/*!! include('ids', { symbol_prefix = 'LOG_ATTR_'}, {
+/*!! include('common/ids', { symbol_prefix = 'LOG_ATTR_'}, {
 
    'Message','Code','Description','Error','Exception','Trace','Found','Expected','ID','Name','Keyword','Type','Count','Index',
    'Argument','Value','Existing Value','Old Value','New Value','Option','Path','Search Path','Input Path','Output Path',
