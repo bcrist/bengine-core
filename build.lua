@@ -7,23 +7,21 @@ module 'core' {
          'src/native/*.cpp',
          'src/native/$(toolchain)/*.cpp',
          exclude 'src/id.cpp',
-         exclude 'src/namespaced_id.cpp'
+         exclude 'src/namespaced_id.cpp',
+         pch_src 'src/pch.cpp'
       },
-      pch_src 'src/pch.cpp',
       define 'BE_CORE_IMPL',
       link_project 'zlib-static'
    },
    lib '-id' {
-      src 'src/id.cpp',
-      src 'src/namespaced_id.cpp',
+      src { 'src/id.cpp', 'src/namespaced_id.cpp' },
       define 'BE_CORE_ID_IMPL',
       define 'BE_CORE_IMPL',
       link_project 'core'
 
    },
    lib '-id-with-names' {
-      src 'src/id.cpp',
-      src 'src/namespaced_id.cpp',
+      src { 'src/id.cpp', 'src/namespaced_id.cpp' },
       define {
          'BE_CORE_ID_IMPL',
          'BE_CORE_IMPL',
