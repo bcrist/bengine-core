@@ -18,7 +18,6 @@ module 'core' {
       define 'BE_CORE_ID_IMPL',
       define 'BE_CORE_IMPL',
       link_project 'core'
-
    },
    lib '-id-with-names' {
       src { 'src/id.cpp', 'src/namespaced_id.cpp' },
@@ -29,6 +28,12 @@ module 'core' {
       },
       export_define 'BE_ID_NAMES_ENABLED',
       link_project 'core'
+   },
+   lib '-lua' {
+      src 'src-lua/*.cpp',
+      define 'BE_CORE_LUA_IMPL',
+      link_project 'core',
+      link_project 'belua'
    },
    app '-test' {
       icon 'icon/bengine-test-perf.ico',
