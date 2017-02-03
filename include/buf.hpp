@@ -78,7 +78,7 @@ public:
    Buf() { }
    Buf(const T* buf, std::size_t size, deleter deleter = nullptr);
    Buf(Buf<const T, C>&& other);
-   explicit Buf(Buf<T, C>&& other);
+   Buf(Buf<T, C>&& other);
    Buf<const T, C>& operator=(Buf<const T, C>&& other);
 };
 
@@ -89,9 +89,8 @@ class Buf<T, true> final : public ::be::detail::BufBase<T> {
    friend void swap(Buf<T, true>& a, Buf<T, true>& b) { a.swap_(b); }
 public:
    Buf() { }
-   template <typename U> Buf(U* buf, std::size_t size, deleter deleter = nullptr);
-   Buf(Buf<T, true>&& other);
-   template <typename U> explicit Buf(Buf<U>&& other);
+   Buf(T* buf, std::size_t size, deleter deleter = nullptr);
+   template <typename U> Buf(Buf<U>&& other);
    Buf<T, true>& operator=(Buf<T, true>&& other);
 };
 
@@ -102,15 +101,18 @@ class Buf<const T, true> final : public ::be::detail::BufBase<const T> {
    friend void swap(Buf<const T, true>& a, Buf<const T, true>& b) { a.swap_(b); }
 public:
    Buf() { }
-   template <typename U> Buf(U* buf, std::size_t size, deleter deleter = nullptr);
-   Buf(Buf<const T, true>&& other);
-   template <typename U> explicit Buf(Buf<U>&& other);
+   Buf(const T* buf, std::size_t size, deleter deleter = nullptr);
+   template <typename U> Buf(Buf<U>&& other);
    Buf<const T, true>& operator=(Buf<const T, true>&& other);
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T>
 Buf<T> make_buf(std::size_t size);
+
+///////////////////////////////////////////////////////////////////////////////
+template <typename T>
+Buf<T> make_buf(T* buf, std::size_t size, std::function<void(void*)> deleter = nullptr);
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T, typename U = T>

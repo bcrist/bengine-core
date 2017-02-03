@@ -147,21 +147,9 @@ Buf<const T, C>& Buf<const T, C>::operator=(Buf<const T, C>&& other) {
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T>
-template <typename U>
-Buf<T, true>::Buf(U* buf, std::size_t size, deleter del)
-   : detail::BufBase<T>(static_cast<T*>(static_cast<void*>(buf)),
-                        size * sizeof(U),
-                        std::move(del))
+Buf<T, true>::Buf(T* buf, std::size_t size, deleter del)
+   : detail::BufBase<T>(buf, size, std::move(del))
 { }
-
-///////////////////////////////////////////////////////////////////////////////
-template <typename T>
-Buf<T, true>::Buf(Buf<T, true>&& other)
-   : detail::BufBase<T>(other.get(), other.size(), nullptr)
-{
-   using std::swap;
-   swap(deleter_, other.deleter_);
-}
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T>
@@ -183,21 +171,9 @@ Buf<T, true>& Buf<T, true>::operator=(Buf<T, true>&& other) {
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T>
-template <typename U>
-Buf<const T, true>::Buf(U* buf, std::size_t size, deleter del)
-   : detail::BufBase<const T>(static_cast<const T*>(static_cast<const void*>(buf)),
-                              size * sizeof(U),
-                              std::move(del))
+Buf<const T, true>::Buf(const T* buf, std::size_t size, deleter del)
+   : detail::BufBase<const T>(buf, size, std::move(del))
 { }
-
-///////////////////////////////////////////////////////////////////////////////
-template <typename T>
-Buf<const T, true>::Buf(Buf<const T, true>&& other)
-   : detail::BufBase<const T>(other.get(), other.size(), nullptr)
-{
-   using std::swap;
-   swap(deleter_, other.deleter_);
-}
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T>
@@ -221,6 +197,12 @@ Buf<const T, true>& Buf<const T, true>::operator=(Buf<const T, true>&& other) {
 template <typename T>
 Buf<T> make_buf(std::size_t size) {
    return Buf<T>(new T[size], size, detail::delete_array);
+}
+
+///////////////////////////////////////////////////////////////////////////////
+template <typename T>
+Buf<T> make_buf(T* buf, std::size_t size, std::function<void(void*)> del) {
+   return Buf<T>(buf, size, std::move(del));
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -255,31 +237,31 @@ Buf<T> copy_buf(const S& source) {
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T, typename U>
 Buf<T> tmp_buf(Buf<U>& source) {
-   return Buf<T>(source.get(), source.size() * sizeof(U) / sizeof(T));
+   return Buf<U>(source.get(), source.size());
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T, typename U>
 Buf<const T> tmp_buf(const Buf<U>& source) {
-   return Buf<const T>(source.get(), source.size() * sizeof(U) / sizeof(T));
+   return Buf<const U>(source.get(), source.size());
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T>
 Buf<const T> tmp_buf(const S& source) {
-   return Buf<T>(source.data(), source.length() / sizeof(T));
+   return Buf<const char>(source.data(), source.length());
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T>
 Buf<T> tmp_buf(S& source) {
-   return Buf<T>(&source[0], source.length() / sizeof(T));
+   return Buf<char>(&source[0], source.length());
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename U>
 S buf_to_string(const Buf<U>& source) {
-   Buf<const char> tmp = tmpBuf<const char>(source);
+   Buf<const char> tmp = tmpBuf(source);
    return S(tmp.get(), tmp.get() + tmp.size());
 }
 
