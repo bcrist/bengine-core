@@ -3,6 +3,7 @@
 #define BE_CORE_BYTE_ORDER_HPP_
 
 #include "builtins.hpp"
+#include "memory.hpp"
 #include <boost/detail/endian.hpp>
 
 #ifdef BOOST_BIG_ENDIAN
@@ -37,7 +38,7 @@ using Native = ByteOrderTag<ByteOrderType::unknown>;
 static_assert(Native::value != ByteOrderType::unknown, "Architecture endianness could not be determined!");
 using Host = Native;
 
-template <typename T, std::size_t N = sizeof(T), bool = std::is_integral<T>::value, bool = std::is_floating_point<T>::value>
+template <typename T, std::size_t N, bool, bool>
 struct Converter { };
 
 template <ByteOrderType To, ByteOrderType From = Host::value, typename T = void> T to(T v) { return Converter<T>::convert<From, To>(std::move(v)); }
@@ -87,6 +88,9 @@ struct ConvertBase {
    static void in_place(T& v, FromTag, ToTag) {
       v = Converter<T>::convert<FromTag::value, ToTag::value>(v);
    }
+
+protected:
+   using base = ConvertBase<T>;
 };
 
 // 1-byte objects have no byte order by definition
@@ -103,21 +107,21 @@ struct Converter<T, 1, I, F> : ConvertBase<T> {
 
 template <typename T>
 struct Converter<T, 2, true, false> : ConvertBase<T> {
-   using ConvertBase<T>::convert;
+   using base::convert;
    static T convert(T v, Little, Big) { return static_cast<T>(BE_BSWAP_U16(v)); }
    static T convert(T v, Big, Little) { return static_cast<T>(BE_BSWAP_U16(v)); }
 };
 
 template <typename T>
 struct Converter<T, 4, true, false> : ConvertBase<T> {
-   using ConvertBase<T>::convert;
+   using base::convert;
    static T convert(T v, Little, Big) { return static_cast<T>(BE_BSWAP_U32(v)); }
    static T convert(T v, Big, Little) { return static_cast<T>(BE_BSWAP_U32(v)); }
 };
 
 template <typename T>
 struct Converter<T, 8, true, false> : ConvertBase<T> {
-   using ConvertBase<T>::convert;
+   using base::convert;
    static T convert(T v, Little, Big) { return static_cast<T>(BE_BSWAP_U64(v)); }
    static T convert(T v, Big, Little) { return static_cast<T>(BE_BSWAP_U64(v)); }
 };
@@ -126,7 +130,7 @@ struct Converter<T, 8, true, false> : ConvertBase<T> {
 
 template <>
 struct Converter<F32, 4, false, true> : ConvertBase<F32> {
-   using ConvertBase<type>::in_place;
+   using base::in_place;
    static void in_place(type& v, Little, Big) { reverse(v); }
    static void in_place(type& v, Big, Little) { reverse(v); }
    static void reverse(type& v) {
@@ -139,7 +143,7 @@ struct Converter<F32, 4, false, true> : ConvertBase<F32> {
 
 template <>
 struct Converter<F64, 8, false, true> : ConvertBase<F64> {
-   using ConvertBase<type>::in_place;
+   using base::in_place;
    static void in_place(type& v, Little, Big) { reverse(v); }
    static void in_place(type& v, Big, Little) { reverse(v); }
    static void reverse(type& v) {

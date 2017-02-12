@@ -46,5 +46,8 @@
     <ClCompile Include="test\test_a3_vmm_alloc.cpp">
       <Filter>Tests\allocators</Filter>
     </ClCompile>
+    <ClCompile Include="test\test_buf.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

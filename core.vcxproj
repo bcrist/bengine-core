@@ -83,6 +83,13 @@
     <ClInclude Include="include\alg.hpp" />
     <ClInclude Include="include\allocators.hpp" />
     <ClInclude Include="include\autolink.hpp" />
+    <ClInclude Include="include\extents.hpp" />
+    <ClInclude Include="include\extents_bo.hpp" />
+    <ClInclude Include="include\generic_extents.hpp" />
+    <ClInclude Include="include\glm.hpp" />
+    <ClInclude Include="include\glm_bo.hpp" />
+    <ClInclude Include="include\glm_helpers.hpp" />
+    <ClInclude Include="include\id_bo.hpp" />
     <ClInclude Include="include\inline_executor.hpp" />
     <ClInclude Include="include\inline_executors.hpp" />
     <ClInclude Include="include\io_service_thread_pool.hpp" />
@@ -102,6 +109,7 @@
     <ClInclude Include="include\io_service.hpp" />
     <ClInclude Include="include\macros.hpp" />
     <ClInclude Include="include\memory_status.hpp" />
+    <ClInclude Include="include\namespaced_id_bo.hpp" />
     <ClInclude Include="include\native\generic\memory.hpp" />
     <ClInclude Include="include\native\vc_win\builtins.hpp" />
     <ClInclude Include="include\native\vc_win\console_color.hpp" />
@@ -123,6 +131,8 @@
     <ClInclude Include="include\synchronized_work_queue.hpp" />
     <ClInclude Include="include\thread_pool_executor.hpp" />
     <ClInclude Include="include\thread_pool_executors.hpp" />
+    <ClInclude Include="include\t_covering_unsigned.hpp" />
+    <ClInclude Include="include\t_is_char.hpp" />
     <ClInclude Include="include\work_queues.hpp" />
     <ClInclude Include="include\service_atomic.hpp" />
     <ClInclude Include="include\service_io_service_thread_pool.hpp" />

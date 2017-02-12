@@ -50,6 +50,14 @@ struct SizeIs : False {};
 template <typename T, std::size_t Size>
 struct SizeIs<T, Size, Size> : True {};
 
+namespace bo {
+// Byte-order conversion
+
+template <typename T, std::size_t N = sizeof(T), bool = std::is_integral<T>::value, bool = std::is_floating_point<T>::value>
+struct Converter;
+
+} // be::bo
+
 namespace detail {
 
 template <std::size_t N>

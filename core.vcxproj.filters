@@ -109,6 +109,12 @@
     <Filter Include="Source Files\memory\allocators">
       <UniqueIdentifier>{e85e562b-5017-4017-a940-c5206136345f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\ids">
+      <UniqueIdentifier>{b11bd452-d980-4a98-9a5a-6b616f3b0dcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\data types">
+      <UniqueIdentifier>{991f19b4-89af-4618-b960-5b9ca48ecf2c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\pch.hpp">
@@ -318,9 +324,6 @@
     <ClInclude Include="include\lifecycle.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\id_collision_handler.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\native\vc_win\console_color.hpp">
       <Filter>Header Files\native\vc_win</Filter>
     </ClInclude>
@@ -470,6 +473,39 @@
     </ClInclude>
     <ClInclude Include="include\a3_static_alloc.hpp">
       <Filter>Header Files\memory\allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="include\id_bo.hpp">
+      <Filter>Header Files\ids</Filter>
+    </ClInclude>
+    <ClInclude Include="include\namespaced_id_bo.hpp">
+      <Filter>Header Files\ids</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic_extents.hpp">
+      <Filter>Header Files\data types</Filter>
+    </ClInclude>
+    <ClInclude Include="include\extents.hpp">
+      <Filter>Header Files\data types</Filter>
+    </ClInclude>
+    <ClInclude Include="include\extents_bo.hpp">
+      <Filter>Header Files\data types</Filter>
+    </ClInclude>
+    <ClInclude Include="include\id_collision_handler.hpp">
+      <Filter>Header Files\ids</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm.hpp">
+      <Filter>Header Files\data types</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm_bo.hpp">
+      <Filter>Header Files\data types</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm_helpers.hpp">
+      <Filter>Header Files\data types</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_is_char.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_covering_unsigned.hpp">
+      <Filter>Header Files\templates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

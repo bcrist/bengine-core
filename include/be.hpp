@@ -40,6 +40,5 @@ bool is_main_thread();
 
 #include "core_autolink.hpp"
 #include "memory.hpp"
-//#include "print_traits_fwd.hpp"
 
 #endif

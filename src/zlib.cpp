@@ -12,8 +12,8 @@ using L = U32;
 
 ///////////////////////////////////////////////////////////////////////////////
 Buf<UC> deflate(const UC* uncompressed, std::size_t uncompressed_size, bool encode_length, I8 level) {
-   assert(static_cast<size_t>(static_cast<L>(uncompressed_size)) == uncompressed_size);
-   assert(static_cast<size_t>(static_cast<unsigned long>(uncompressed_size)) == uncompressed_size);
+   assert(static_cast<std::size_t>(static_cast<L>(uncompressed_size)) == uncompressed_size);
+   assert(static_cast<std::size_t>(static_cast<unsigned long>(uncompressed_size)) == uncompressed_size);
 
    unsigned long uc_size = static_cast<unsigned long>(uncompressed_size);
    unsigned long buffer_size = compressBound(uc_size);
@@ -43,7 +43,15 @@ Buf<UC> deflate(const UC* uncompressed, std::size_t uncompressed_size, bool enco
       L size = bo::to_net(static_cast<L>(uncompressed_size));
       memcpy(buffer.get(), &size, sizeof(L));
    }
-   buffer.shrink(static_cast<size_t>(buffer_size));
+   
+   std::size_t final_size = static_cast<std::size_t>(buffer_size);
+   if (buffer.size() > final_size + 100 && buffer.size() > final_size * 9 / 8) {
+      buffer = copy_buf(sub_buf(buffer, 0, final_size));
+   } else if (buffer.size() != final_size) {
+      buffer.release();
+      buffer = Buf<UC>(buffer.get(), final_size, detail::delete_array);
+   }
+
    return buffer;
 }
 
@@ -66,7 +74,7 @@ std::size_t inflate(const UC* compressed, std::size_t compressed_size, UC* uncom
    int result = uncompress(uncompressed, &uc_size, compressed, static_cast<unsigned long>(compressed_size));
 
    if (result == Z_OK)
-      return static_cast<size_t>(uc_size);
+      return static_cast<std::size_t>(uc_size);
    else if (result == Z_DATA_ERROR)
       throw std::runtime_error("Invalid compressed zlib data!");
    else if (result == Z_BUF_ERROR)
@@ -127,7 +135,15 @@ Buf<UC> inflate_blob(const Buf<const UC>& compressed) {
    uncompressed_length = inflate(compressed.get() + sizeof(L), compressed.size() - sizeof(L),
                                  uncompressed.get(), uncompressed.size());
 
-   uncompressed.shrink(uncompressed_length);
+   
+   if (uncompressed.size() != uncompressed_length) {
+      if (uncompressed.size() > uncompressed_length + 100 && uncompressed.size() > uncompressed_length * 9 / 8) {
+         uncompressed = copy_buf(sub_buf(uncompressed, 0, uncompressed_length));
+      } else {
+         uncompressed.release();
+         uncompressed = Buf<UC>(uncompressed.get(), uncompressed_length, detail::delete_array);
+      }
+   }
 
    return uncompressed;
 }
@@ -139,7 +155,14 @@ Buf<UC> inflate_blob(const Buf<const UC>& compressed, std::size_t uncompressed_l
    uncompressed_length = inflate(compressed.get(), compressed.size(),
                                  uncompressed.get(), uncompressed.size());
 
-   uncompressed.shrink(uncompressed_length);
+   if (uncompressed.size() != uncompressed_length) {
+      if (uncompressed.size() > uncompressed_length + 100 && uncompressed.size() > uncompressed_length * 9 / 8) {
+         uncompressed = copy_buf(sub_buf(uncompressed, 0, uncompressed_length));
+      } else {
+         uncompressed.release();
+         uncompressed = Buf<UC>(uncompressed.get(), uncompressed_length, detail::delete_array);
+      }
+   }
 
    return uncompressed;
 }
