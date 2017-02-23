@@ -8,7 +8,7 @@ namespace be {
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename I>
-class PairFirstIterator : boost::iterator_adaptor<PairFirstIterator<I>, I, typename I::value_type::second_type> {
+class PairFirstIterator : boost::iterator_adaptor<PairFirstIterator<I>, I, typename I::value_type::first_type> {
    friend class boost::iterator_core_access;
 public:
    PairFirstIterator() { }
