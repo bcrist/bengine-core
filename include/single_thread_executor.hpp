@@ -29,12 +29,14 @@ public:
 
    void running(bool should_run) {
       BE_ASSERT_MAIN_THREAD();
-
-      if (should_run && !running()) {
-         thread_ = create_thread_();
-      } else if (!should_run && running()) {
-         this->shutdown();
-         thread_.join();
+      
+      if (should_run != running()) {
+         if (should_run) {
+            thread_ = create_thread_();
+         } else {
+            this->shutdown();
+            thread_.join();
+         }
       }
    }
 
