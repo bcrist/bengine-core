@@ -112,17 +112,15 @@ private:
       expand_(std::move(lock));
    }
    void expand_(std::unique_lock<std::mutex> lock) {
-      for (std::thread::id tid : dead_threads_) {
-         threads_.erase(std::remove_if(threads_.begin(), threads_.end(), [tid](std::thread& t) {
-            if (t.get_id() == tid) {
-               if (t.joinable()) {
-                  t.join();
-               }
-               return true;
+      threads_.erase(std::remove_if(threads_.begin(), threads_.end(), [this](std::thread& t) {
+         if (std::find(dead_threads_.begin(), dead_threads_.end(), t.get_id()) != dead_threads_.end()) {
+            if (t.joinable()) {
+               t.join();
             }
-            return false;
-         }), threads_.end());
-      }
+            return true;
+         }
+         return false;
+      }), threads_.end());
       dead_threads_.clear();
 
       while (threads_.size() < n_threads_) {
