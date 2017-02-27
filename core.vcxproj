@@ -101,7 +101,6 @@
     <ClInclude Include="include\console_color.hpp" />
     <ClInclude Include="include\console_indent.hpp" />
     <ClInclude Include="include\console_log_sink.hpp" />
-    <ClInclude Include="include\const_handle.hpp" />
     <ClInclude Include="include\core_autolink.hpp" />
     <ClInclude Include="include\exceptions.hpp" />
     <ClInclude Include="include\id_collision_handler.hpp" />
@@ -142,14 +141,9 @@
     <ClInclude Include="include\t_container_types.hpp" />
     <ClInclude Include="include\ids.hpp" />
     <ClInclude Include="include\filesystem.hpp" />
-    <ClInclude Include="include\handle.hpp" />
-    <ClInclude Include="include\handleable.hpp" />
-    <ClInclude Include="include\handle_base.hpp" />
-    <ClInclude Include="include\handle_manager.hpp" />
     <ClInclude Include="include\pair_value_iterators.hpp" />
     <ClInclude Include="include\log_attrib_ids.hpp" />
     <ClInclude Include="include\log_handle.hpp" />
-    <ClInclude Include="include\mutable_handle_base.hpp" />
     <ClInclude Include="include\native.hpp" />
     <ClInclude Include="include\service_helpers.hpp" />
     <ClInclude Include="include\service_ids.hpp" />
@@ -169,7 +163,6 @@
     <ClInclude Include="include\service_manager.hpp" />
     <ClInclude Include="include\small_pair.hpp" />
     <ClInclude Include="include\small_triplet.hpp" />
-    <ClInclude Include="include\source_handle.hpp" />
     <ClInclude Include="include\string_interpolation.hpp" />
     <ClInclude Include="include\t_is_container.hpp" />
     <ClInclude Include="include\t_is_iterator.hpp" />
@@ -221,9 +214,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="include\buf.inl" />
-    <None Include="include\handle_base.inl" />
-    <None Include="include\handle_manager.inl" />
-    <None Include="include\source_handle.inl" />
     <None Include="include\string_interpolation.inl" />
   </ItemGroup>
   <ItemGroup>

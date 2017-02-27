@@ -37,12 +37,6 @@
     <Filter Include="Header Files\time">
       <UniqueIdentifier>{cea065a8-64d1-4b92-b24a-e2cf7ef2cb2e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\handles">
-      <UniqueIdentifier>{9f7a36a1-4820-4e3d-8463-a7c85a1d0e83}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\handles\detail">
-      <UniqueIdentifier>{7dc6f00f-eae5-4408-a9b3-78563e5b44ba}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\time">
       <UniqueIdentifier>{1aef3433-4fb4-412d-98e5-3fff08a48c97}</UniqueIdentifier>
     </Filter>
@@ -188,27 +182,6 @@
     </ClInclude>
     <ClInclude Include="include\byte_order.hpp">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\handleable.hpp">
-      <Filter>Header Files\handles</Filter>
-    </ClInclude>
-    <ClInclude Include="include\handle.hpp">
-      <Filter>Header Files\handles</Filter>
-    </ClInclude>
-    <ClInclude Include="include\const_handle.hpp">
-      <Filter>Header Files\handles</Filter>
-    </ClInclude>
-    <ClInclude Include="include\handle_manager.hpp">
-      <Filter>Header Files\handles\detail</Filter>
-    </ClInclude>
-    <ClInclude Include="include\mutable_handle_base.hpp">
-      <Filter>Header Files\handles\detail</Filter>
-    </ClInclude>
-    <ClInclude Include="include\handle_base.hpp">
-      <Filter>Header Files\handles\detail</Filter>
-    </ClInclude>
-    <ClInclude Include="include\source_handle.hpp">
-      <Filter>Header Files\handles</Filter>
     </ClInclude>
     <ClInclude Include="include\t_pred.hpp">
       <Filter>Header Files\templates</Filter>
@@ -606,15 +579,6 @@
     </None>
     <None Include="include\buf.inl">
       <Filter>Header Files\memory</Filter>
-    </None>
-    <None Include="include\handle_manager.inl">
-      <Filter>Header Files\handles\detail</Filter>
-    </None>
-    <None Include="include\handle_base.inl">
-      <Filter>Header Files\handles\detail</Filter>
-    </None>
-    <None Include="include\source_handle.inl">
-      <Filter>Header Files\handles</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

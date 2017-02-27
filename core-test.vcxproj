@@ -53,7 +53,6 @@
     <ClCompile Include="test\test_single_thread_executors.cpp" />
     <ClCompile Include="test\test_stack_trace.cpp" />
     <ClCompile Include="test\test_string_interpolation.cpp" />
-    <ClCompile Include="test\test_handles.cpp" />
     <ClCompile Include="test\test_main.cpp" />
     <ClCompile Include="test\test_thread_pool_executors.cpp" />
   </ItemGroup>
