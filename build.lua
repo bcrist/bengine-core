@@ -1,7 +1,5 @@
 module 'core' {
    lib {
-      limp 'include/log_attrib_ids.hpp',
-      limp 'include/service_ids.hpp',
       src {
          'src/*.cpp',
          'src/native/*.cpp',

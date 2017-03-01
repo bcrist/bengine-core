@@ -6,7 +6,7 @@
    'New Parent ID','Old Parent ID','Parent ID','Op ID'
    
 }) !! 184 */
-/* ######## !! GENERATED CODE -- DO NOT MODIFY !! ######## */
+/* ################# !! GENERATED CODE -- DO NOT MODIFY !! ################# */
 #pragma once
 #ifndef BE_CORE_LOG_ATTRIB_IDS_HPP_
 #define BE_CORE_LOG_ATTRIB_IDS_HPP_
@@ -188,4 +188,4 @@ const Id log_attr_op_id = Id(BEIDN_LOG_ATTR_OP_ID);
 
 #endif
 
-/* ################ END OF GENERATED CODE ################ */
+/* ######################### END OF GENERATED CODE ######################### */

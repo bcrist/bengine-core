@@ -6,7 +6,7 @@
    {'SIMPLE_SINGLE_THREAD_EXECUTOR_LOGPROCESSING', 'simple_single_thread_executor:log-processing'}
 
 }) !! 44 */
-/* ######## !! GENERATED CODE -- DO NOT MODIFY !! ######## */
+/* ################# !! GENERATED CODE -- DO NOT MODIFY !! ################# */
 #pragma once
 #ifndef BE_CORE_SERVICE_IDS_HPP_
 #define BE_CORE_SERVICE_IDS_HPP_
@@ -48,4 +48,4 @@ const Id core_service_simple_single_thread_executor_logprocessing = Id(BEIDN_COR
 
 #endif
 
-/* ################ END OF GENERATED CODE ################ */
+/* ######################### END OF GENERATED CODE ######################### */
