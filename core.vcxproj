@@ -180,6 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\a3_vmm_alloc.cpp" />
+    <ClCompile Include="src\alg.cpp" />
     <ClCompile Include="src\io_service_thread_pool.cpp" />
     <ClCompile Include="src\console_indent.cpp" />
     <ClCompile Include="src\console_color.cpp" />

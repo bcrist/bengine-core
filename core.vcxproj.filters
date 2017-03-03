@@ -572,6 +572,9 @@
     <ClCompile Include="src\a3_vmm_alloc.cpp">
       <Filter>Source Files\memory\allocators</Filter>
     </ClCompile>
+    <ClCompile Include="src\alg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\string_interpolation.inl">

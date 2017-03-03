@@ -86,6 +86,24 @@ CharT to_upper(CharT c) {
    return c;
 }
 
+///////////////////////////////////////////////////////////////////////////////
+std::size_t std_hash_raw(const void* data, std::size_t size);
+std::size_t std_hash_raw(std::size_t in, const void* data, std::size_t size);
+
+///////////////////////////////////////////////////////////////////////////////
+template <typename T>
+std::size_t std_hash(const T& t) {
+   static_assert(std::is_standard_layout<T>::value, "The default std_hash implementation is only valid for standard-layout types!");
+   return std_hash_raw(&t, sizeof(T));
+}
+
+///////////////////////////////////////////////////////////////////////////////
+template <typename T>
+std::size_t std_hash(std::size_t in, const T& t) {
+   static_assert(std::is_standard_layout<T>::value, "The default std_hash implementation is only valid for standard-layout types!");
+   return std_hash_raw(in, &t, sizeof(T));
+}
+
 } // be
 
 #endif
