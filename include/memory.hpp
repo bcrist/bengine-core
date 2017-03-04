@@ -85,11 +85,11 @@ template <typename T>
 S type_name() {
    S name = typeid(T).name();
    S test = "class ";
-   if (std::equal(test.begin(), test.end(), name.begin())) {
+   if (std::equal(test.begin(), test.end(), name.begin(), name.end())) {
       name.erase(0, test.length());
    } else {
       test = "struct ";
-      if (std::equal(test.begin(), test.end(), name.begin())) {
+      if (std::equal(test.begin(), test.end(), name.begin(), name.end())) {
          name.erase(0, test.length());
       }
    }
