@@ -83,6 +83,11 @@ inline void delete_array(void* ptr, std::size_t size) {
    delete[] ptr;
 }
 
+///////////////////////////////////////////////////////////////////////////////
+inline void aligned_free(void* ptr, std::size_t size) {
+   BE_ALIGNED_FREE(ptr);
+}
+
 } // be::detail
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -203,6 +208,34 @@ Buf<T> make_buf(T* buf, std::size_t size, typename Buf<T>::deleter del) {
    return Buf<T>(buf, size, del);
 }
 
+///////////////////////////////////////////////////////////////////////////////
+template <typename T>
+Buf<T> make_aligned_buf(std::size_t size, std::size_t alignment, bool uninitialized) {
+   static_assert(std::is_trivially_destructible<T>::value, "make_aligned_buf() requires a trivially-destructible type!");
+   if (size == 0) {
+      return Buf<T>();
+   } else if (uninitialized) {
+      void* ptr = BE_ALIGNED_ALLOC(alignment, size * sizeof(T));
+      if (!ptr) {
+         throw std::bad_alloc();
+      }
+      return Buf<T>(static_cast<T*>(ptr), size, detail::aligned_free);
+   } else {
+      if (alignment <= 8) {
+         return make_buf<T>(size);
+      } else {
+         void* ptr = BE_ALIGNED_ALLOC(alignment, size * sizeof(T));
+         if (!ptr) {
+            throw std::bad_alloc();
+         }
+         T* tptr = static_cast<T*>(ptr);
+         for (std::size_t i = 0; i < size; ++i) {
+            new (static_cast<void*>(tptr + i)) T;
+         }
+         return Buf<T>(tptr, size, detail::aligned_free);
+      }
+   }
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T>
@@ -230,7 +263,6 @@ Buf<const T> tmp_buf(const Buf<const T>& source) {
 
 
 ///////////////////////////////////////////////////////////////////////////////
-
 inline Buf<char> tmp_buf(S& source) {
    return Buf<char>(&source[0], source.length());
 }
