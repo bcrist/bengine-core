@@ -1,6 +1,10 @@
-#pragma once
+﻿#pragma once
 #ifndef BE_CORE_BUILTINS_HPP_
 #define BE_CORE_BUILTINS_HPP_
+
+#ifndef BE_CORE_BE_HPP_
+#include "be.hpp"
+#endif
 
 #ifdef DOXYGEN
 ///////////////////////////////////////////////////////////////////////////////
@@ -27,5 +31,15 @@
 #endif
 
 #include BE_NATIVE_CORE(builtins.hpp)
+
+namespace be {
+
+std::pair<U8, bool> bitscan_fwd(U32 data);
+std::pair<U8, bool> bitscan_fwd(U64 data);
+
+std::pair<U8, bool> bitscan_rev(U32 data);
+std::pair<U8, bool> bitscan_rev(U64 data);
+
+} // be
 
 #endif

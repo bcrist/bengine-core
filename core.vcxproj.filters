@@ -575,6 +575,9 @@
     <ClCompile Include="src\alg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\native\vc_win\builtins.cpp">
+      <Filter>Source Files\native\vc_win</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\string_interpolation.inl">
