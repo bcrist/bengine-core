@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #ifndef BE_CORE_GLM_HELPERS_HPP_
 #define BE_CORE_GLM_HELPERS_HPP_
 
@@ -114,6 +114,15 @@ const T* end(const glm::tdualquat<T, P>& v) {
 
 namespace be {
 namespace t {
+
+template <typename T, bool = std::is_arithmetic_v<T>>
+struct vector_components : std::integral_constant<glm::length_t, 0> { };
+
+template <typename T>
+struct vector_components<T, true> : std::integral_constant<glm::length_t, 1> { };
+
+template <glm::length_t L, typename T, glm::precision P>
+struct vector_components<glm::vec<L, T, P>, false> : std::integral_constant<glm::length_t, L> { };
 
 template <typename T>
 struct is_container;
