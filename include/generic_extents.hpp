@@ -143,7 +143,7 @@ struct generic_extents<glm::tvec2<C, P>, glm::tvec2<D, P>> {
 
    type union_bounds(const type& other) {
       type retval;
-      for (size_t i = 0; i < 2; ++i) {
+      for (glm::length_t i = 0; i < 2; ++i) {
          C min_value = min(min(offset[i], offset[i] + C(dim[i])), min(other.offset[i], other.offset[i] + C(dim[i])));
          C max_value = max(max(offset[i], offset[i] + C(dim[i])), max(other.offset[i], other.offset[i] + C(dim[i])));
 
@@ -155,7 +155,7 @@ struct generic_extents<glm::tvec2<C, P>, glm::tvec2<D, P>> {
 
    type union_bounds(const offset_type& point) {
       type retval;
-      for (size_t i = 0; i < 2; ++i) {
+      for (glm::length_t i = 0; i < 2; ++i) {
          C min_value = min(min(offset[i], offset[i] + C(dim[i])), point[i]);
          C max_value = max(max(offset[i], offset[i] + C(dim[i])), point[i]);
 
@@ -167,7 +167,7 @@ struct generic_extents<glm::tvec2<C, P>, glm::tvec2<D, P>> {
 
    type intersection(const type& other) {
       type retval;
-      for (size_t i = 0; i < 2; ++i) {
+      for (glm::length_t i = 0; i < 2; ++i) {
          C new_a = max(offset[i], other.offset[i]);
          C new_b = min(offset[i] + C(dim[i]), other.offset[i] + C(other.dim[i]));
 
@@ -183,7 +183,7 @@ struct generic_extents<glm::tvec2<C, P>, glm::tvec2<D, P>> {
    }
 
    bool intersects(const type& other) const {
-      for (size_t i = 0; i < 2; ++i) {
+      for (glm::length_t i = 0; i < 2; ++i) {
          C new_a = max(offset[i], other.offset[i]);
          C new_b = min(offset[i] + C(dim[i]), other.offset[i] + C(other.dim[i]));
 
@@ -263,7 +263,7 @@ struct generic_extents<glm::tvec3<C, P>, glm::tvec3<D, P>> {
 
    type union_bounds(const type& other) {
       type retval;
-      for (size_t i = 0; i < 3; ++i) {
+      for (glm::length_t i = 0; i < 3; ++i) {
          C min_value = min(min(offset[i], offset[i] + C(dim[i])), min(other.offset[i], other.offset[i] + C(dim[i])));
          C max_value = max(max(offset[i], offset[i] + C(dim[i])), max(other.offset[i], other.offset[i] + C(dim[i])));
 
@@ -275,7 +275,7 @@ struct generic_extents<glm::tvec3<C, P>, glm::tvec3<D, P>> {
 
    type union_bounds(const offset_type& point) {
       type retval;
-      for (size_t i = 0; i < 3; ++i) {
+      for (glm::length_t i = 0; i < 3; ++i) {
          C min_value = min(min(offset[i], offset[i] + C(dim[i])), point[i]);
          C max_value = max(max(offset[i], offset[i] + C(dim[i])), point[i]);
 
@@ -287,7 +287,7 @@ struct generic_extents<glm::tvec3<C, P>, glm::tvec3<D, P>> {
 
    type intersection(const type& other) {
       type retval;
-      for (size_t i = 0; i < 3; ++i) {
+      for (glm::length_t i = 0; i < 3; ++i) {
          C new_a = max(offset[i], other.offset[i]);
          C new_b = min(offset[i] + C(dim[i]), other.offset[i] + C(other.dim[i]));
 
@@ -303,7 +303,7 @@ struct generic_extents<glm::tvec3<C, P>, glm::tvec3<D, P>> {
    }
 
    bool intersects(const type& other) const {
-      for (size_t i = 0; i < 3; ++i) {
+      for (glm::length_t i = 0; i < 3; ++i) {
          C new_a = max(offset[i], other.offset[i]);
          C new_b = min(offset[i] + C(dim[i]), other.offset[i] + C(other.dim[i]));
 
@@ -323,6 +323,11 @@ struct generic_extents<glm::tvec3<C, P>, glm::tvec3<D, P>> {
       return contains(other.offset) && contains(other.offset + offset_type(other.dim));
    }
 };
+
+template <typename T, typename U>
+generic_extents<T, U> make_extents(T t, U u) {
+   return generic_extents<T, U> { t, u };
+}
 
 } // be
 

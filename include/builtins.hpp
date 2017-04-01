@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #ifndef BE_CORE_BUILTINS_HPP_
 #define BE_CORE_BUILTINS_HPP_
 

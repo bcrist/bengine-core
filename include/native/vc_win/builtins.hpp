@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #ifndef BE_NATIVE_VC_WIN_BUILTINS_HPP_
 #define BE_NATIVE_VC_WIN_BUILTINS_HPP_
 

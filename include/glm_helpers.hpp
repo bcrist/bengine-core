@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #ifndef BE_CORE_GLM_HELPERS_HPP_
 #define BE_CORE_GLM_HELPERS_HPP_
 
