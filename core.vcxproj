@@ -132,6 +132,7 @@
     <ClInclude Include="include\thread_pool_executors.hpp" />
     <ClInclude Include="include\t_covering_unsigned.hpp" />
     <ClInclude Include="include\t_is_char.hpp" />
+    <ClInclude Include="include\version.hpp" />
     <ClInclude Include="include\work_queues.hpp" />
     <ClInclude Include="include\service_atomic.hpp" />
     <ClInclude Include="include\service_io_service_thread_pool.hpp" />

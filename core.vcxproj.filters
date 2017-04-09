@@ -480,6 +480,9 @@
     <ClInclude Include="include\t_covering_unsigned.hpp">
       <Filter>Header Files\templates</Filter>
     </ClInclude>
+    <ClInclude Include="include\version.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
