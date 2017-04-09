@@ -6,7 +6,7 @@
 
 #define BE_CORE_VERSION_MAJOR 0
 #define BE_CORE_VERSION_MINOR 1
-#define BE_CORE_VERSION_REV 1
+#define BE_CORE_VERSION_REV 2
 
 /*!! include('common/version', 'BE_CORE', 'bengine') !! 6 */
 /* ################# !! GENERATED CODE -- DO NOT MODIFY !! ################# */
@@ -15,8 +15,8 @@
 
 /* ######################### END OF GENERATED CODE ######################### */
 
-#define BE_COPYRIGHT "Copyright (C) 2012-2017 B. Crist"
-#define BE_LICENSE "Distributed under the MIT license as part of Bengine"
+#define BE_COPYRIGHT "Copyright (C) 2012-2017 Magic / More Magic, B. Crist"
+#define BE_LICENSE "Distributed under the MIT license as part of bengine"
 #define BE_URL "https://github.com/magicmoremagic/bengine"
 
 #endif

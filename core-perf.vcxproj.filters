@@ -10,6 +10,7 @@
     <ClCompile Include="perf\perf_logging.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
+    <ClCompile Include="perf\version.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="perf\ensure_init.hpp" />

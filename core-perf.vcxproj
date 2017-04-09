@@ -44,6 +44,7 @@
   <ItemGroup>
     <ClCompile Include="perf\perf_logging.cpp" />
     <ClCompile Include="perf\perf_main.cpp" />
+    <ClCompile Include="perf\version.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="perf\ensure_init.hpp" />

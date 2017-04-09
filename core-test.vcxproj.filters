@@ -46,5 +46,6 @@
     <ClCompile Include="test\test_buf.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
+    <ClCompile Include="test\version.cpp" />
   </ItemGroup>
 </Project>
