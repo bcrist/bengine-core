@@ -119,7 +119,7 @@ Id::operator S() const {
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-/// \brief  Returns a cononical string representation of this Id.
+/// \brief  Returns a canonical string representation of this Id.
 ///
 /// \details In addition to uniquely describing the Id, any other Ids which
 ///         compare equal to this one will produce the same string, regardless

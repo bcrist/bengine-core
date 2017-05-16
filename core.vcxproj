@@ -83,6 +83,7 @@
     <ClInclude Include="include\alg.hpp" />
     <ClInclude Include="include\allocators.hpp" />
     <ClInclude Include="include\autolink.hpp" />
+    <ClInclude Include="include\enum_traits.hpp" />
     <ClInclude Include="include\extents.hpp" />
     <ClInclude Include="include\extents_bo.hpp" />
     <ClInclude Include="include\generic_extents.hpp" />
