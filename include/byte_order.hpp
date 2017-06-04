@@ -154,6 +154,25 @@ struct Converter<F64, 8, false, true> : ConvertBase<F64> {
    }
 };
 
+// raw arrays:
+
+template <typename T, std::size_t N, std::size_t S>
+struct Converter<T[N], S, false, false> : ConvertBase<T[N]> {
+   using base::in_place;
+
+   static void in_place(type& v, Little, Big) {
+      for (std::size_t i = 0; i < N; ++i) {
+         Converter<T>::in_place(v[i], Little, Big);
+      }
+   }
+
+   static void in_place(type& v, Big, Little) {
+      for (std::size_t i = 0; i < N; ++i) {
+         Converter<T>::in_place(v[i], Little, Big);
+      }
+   }
+};
+
 } // be::bo
 } // be
 

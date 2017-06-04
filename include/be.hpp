@@ -5,6 +5,7 @@
 #include "native.hpp"
 #include <cstddef>
 #include <cstdint>
+#include <cassert>
 #include <iosfwd>
 #include <utility>
 #include <gsl/string_span>

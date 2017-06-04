@@ -96,6 +96,20 @@ S type_name() {
    return name;
 }
 
+template <std::size_t A, typename T>
+constexpr T aligned_size(T size) {
+   static_assert(std::is_unsigned<T>::value, "Type must be unsigned");
+   static_assert(0ull == (A & (A - std::size_t(1))), "Alignment must be a power of 2");
+   return T(((std::size_t(size) - std::size_t(1)) & ~(A - std::size_t(1))) + A);
+}
+
+template <typename T>
+T aligned_size(T size, T alignment) {
+   static_assert(std::is_unsigned<T>::value, "Type must be unsigned");
+   assert(T(0) == (alignment & (alignment - T(1))));
+   return ((size - T(1)) & ~(alignment - T(1))) + alignment;
+}
+
 //namespace detail {
 //
 //// TODO replace with a3 allocators
