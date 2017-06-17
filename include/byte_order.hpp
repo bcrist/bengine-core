@@ -157,20 +157,29 @@ struct Converter<F64, 8, false, true> : ConvertBase<F64> {
 // raw arrays:
 
 template <typename T, std::size_t N, std::size_t S>
-struct Converter<T[N], S, false, false> : ConvertBase<T[N]> {
-   using base::in_place;
+struct Converter<T[N], S, false, false> {
+   using type = T[N];
+
+   template <ByteOrderType From, ByteOrderType To>
+   static void in_place(type& v) {
+      Converter<type>::in_place(v, ByteOrderTag<From>(), ByteOrderTag<To>());
+   }
 
    static void in_place(type& v, Little, Big) {
       for (std::size_t i = 0; i < N; ++i) {
-         Converter<T>::in_place(v[i], Little, Big);
+         Converter<T>::in_place(v[i], Little(), Big());
       }
    }
 
    static void in_place(type& v, Big, Little) {
       for (std::size_t i = 0; i < N; ++i) {
-         Converter<T>::in_place(v[i], Little, Big);
+         Converter<T>::in_place(v[i], Little(), Big());
       }
    }
+
+   // Non conversion is nop
+   template <typename Tag>
+   static void in_place(T&, Tag, Tag) { }
 };
 
 } // be::bo
