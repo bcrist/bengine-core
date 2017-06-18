@@ -1,10 +1,8 @@
-#include "pch.hpp"
 #include <be/core/native.hpp>
 #ifdef BE_NATIVE_VC_WIN
 
 #include "stack_trace.hpp"
 #include "logging.hpp"
-#include "utf16_widen_narrow.hpp"
 #include <mutex>
 
 #include "native/vc_win/vc_win_win32.hpp"
@@ -115,7 +113,9 @@ StackFrameSymbolInfo get_stack_frame_symbol_info(std::uintptr_t address) {
          symbol_info->MaxNameLen = MAX_SYM_NAME;
 
          if (::SymFromAddrW(process, addr, &displacement, symbol_info)) {
-            info.symbol = narrow(reinterpret_cast<const char16_t*>(symbol_info->Name), static_cast<std::size_t>(symbol_info->NameLen));
+            int size = ::WideCharToMultiByte(CP_UTF8, 0, symbol_info->Name, (int)symbol_info->NameLen, NULL, 0, NULL, NULL);
+            info.symbol.assign((std::size_t)size, 0);
+            ::WideCharToMultiByte(CP_UTF8, 0, symbol_info->Name, (int)symbol_info->NameLen, &info.symbol[0], size, NULL, NULL);
          }
       }
       
@@ -124,7 +124,9 @@ StackFrameSymbolInfo get_stack_frame_symbol_info(std::uintptr_t address) {
          module.SizeOfStruct = sizeof(module);
 
          if (::SymGetModuleInfoW64(process, addr, &module)) {
-            info.module = narrow(reinterpret_cast<const char16_t*>(module.ModuleName));
+            int size = ::WideCharToMultiByte(CP_UTF8, 0, module.ModuleName, -1, NULL, 0, NULL, NULL);
+            info.module.assign((std::size_t)size, 0);
+            ::WideCharToMultiByte(CP_UTF8, 0, module.ModuleName, -1, &info.module[0], size, NULL, NULL);
          }
       }
 
@@ -136,7 +138,10 @@ StackFrameSymbolInfo get_stack_frame_symbol_info(std::uintptr_t address) {
          if (::SymGetLineFromAddrW64(process, addr, &displacement, &line)) {
             info.line = static_cast<U32>(line.LineNumber);
             info.line_displacement = static_cast<I32>(displacement);
-            info.file = narrow(reinterpret_cast<const char16_t*>(line.FileName));
+
+            int size = ::WideCharToMultiByte(CP_UTF8, 0, line.FileName, -1, NULL, 0, NULL, NULL);
+            info.file.assign((std::size_t)size, 0);
+            ::WideCharToMultiByte(CP_UTF8, 0, line.FileName, -1, &info.file[0], size, NULL, NULL);
          }
       }
    }

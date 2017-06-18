@@ -3,19 +3,13 @@
 #define BE_CORE_FILESYSTEM_HPP_
 
 #include "t_is_container.hpp"
-#include <filesystem>
+#include BE_NATIVE_CORE(filesystem.hpp)
 
 namespace be {
-namespace fs {
-
-using namespace std::experimental::filesystem;
-
-// try to turn absolute paths to source files into relative paths - native implementation
-S relative_source_file(path source_file_path);
-
-} // be::fs
 
 using Path = fs::path;
+
+S relative_source_file(Path source_file_path);
 
 namespace t {
 

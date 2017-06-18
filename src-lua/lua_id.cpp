@@ -1,8 +1,7 @@
 #include "lua_id.hpp"
 #include <be/core/id.hpp>
 
-namespace be {
-namespace belua {
+namespace be::belua {
 
 ///////////////////////////////////////////////////////////////////////////////
 const luaL_Reg id_module { "be.Id", open_id };
@@ -114,4 +113,3 @@ int open_id(lua_State* L) {
 }
 
 } // be::belua
-} // be

@@ -2,8 +2,8 @@
 #ifndef BE_CORE_BYTE_ORDER_HPP_
 #define BE_CORE_BYTE_ORDER_HPP_
 
-#include "builtins.hpp"
 #include "memory.hpp"
+#include "builtins.hpp"
 #include <boost/detail/endian.hpp>
 
 #ifdef BOOST_BIG_ENDIAN

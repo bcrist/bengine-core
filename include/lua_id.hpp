@@ -2,13 +2,12 @@
 #ifndef BE_CORE_LUA_ID_HPP_
 #define BE_CORE_LUA_ID_HPP_
 
-#include "lua_core_autolink.hpp"
+#include "core_lua_autolink.hpp"
 #include <be/core/id.hpp>
 #include <lua/lua.h>
 #include <lua/lauxlib.h>
 
-namespace be {
-namespace belua {
+namespace be::belua {
 
 ///////////////////////////////////////////////////////////////////////////////
 int open_id(lua_State* L);
@@ -16,6 +15,5 @@ int open_id(lua_State* L);
 extern const luaL_Reg id_module;
 
 } // be::belua
-} // be
 
 #endif

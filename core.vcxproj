@@ -43,13 +43,13 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>BE_CORE_IMPL;BE_NO_PCH_CORE_INCLUDES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BE_CORE_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>BE_CORE_IMPL;BE_NO_PCH_CORE_INCLUDES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BE_CORE_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -86,6 +86,7 @@
     <ClInclude Include="include\enum_traits.hpp" />
     <ClInclude Include="include\extents.hpp" />
     <ClInclude Include="include\extents_bo.hpp" />
+    <ClInclude Include="include\filesystem.hpp" />
     <ClInclude Include="include\generic_extents.hpp" />
     <ClInclude Include="include\glm.hpp" />
     <ClInclude Include="include\glm_bo.hpp" />
@@ -110,9 +111,9 @@
     <ClInclude Include="include\macros.hpp" />
     <ClInclude Include="include\memory_status.hpp" />
     <ClInclude Include="include\namespaced_id_bo.hpp" />
-    <ClInclude Include="include\native\generic\memory.hpp" />
     <ClInclude Include="include\native\vc_win\builtins.hpp" />
     <ClInclude Include="include\native\vc_win\console_color.hpp" />
+    <ClInclude Include="include\native\vc_win\filesystem.hpp" />
     <ClInclude Include="include\native\vc_win\memory.hpp" />
     <ClInclude Include="include\native\vc_win\stack_trace.hpp" />
     <ClInclude Include="include\native\vc_win\vc_win.hpp" />
@@ -142,7 +143,6 @@
     <ClInclude Include="include\stack_trace_exception.hpp" />
     <ClInclude Include="include\t_container_types.hpp" />
     <ClInclude Include="include\ids.hpp" />
-    <ClInclude Include="include\filesystem.hpp" />
     <ClInclude Include="include\pair_value_iterators.hpp" />
     <ClInclude Include="include\log_attrib_ids.hpp" />
     <ClInclude Include="include\log_handle.hpp" />
@@ -159,13 +159,12 @@
     <ClInclude Include="include\log_record.hpp" />
     <ClInclude Include="include\service_log.hpp" />
     <ClInclude Include="include\memory.hpp" />
-    <ClInclude Include="include\pch.hpp" />
+    <ClInclude Include="src\pch.hpp" />
     <ClInclude Include="include\service.hpp" />
     <ClInclude Include="include\services.hpp" />
     <ClInclude Include="include\service_manager.hpp" />
     <ClInclude Include="include\small_pair.hpp" />
     <ClInclude Include="include\small_triplet.hpp" />
-    <ClInclude Include="include\string_interpolation.hpp" />
     <ClInclude Include="include\t_is_container.hpp" />
     <ClInclude Include="include\t_is_iterator.hpp" />
     <ClInclude Include="include\t_is_same_size.hpp" />
@@ -174,15 +173,14 @@
     <ClInclude Include="include\t_pred.hpp" />
     <ClInclude Include="include\t_select.hpp" />
     <ClInclude Include="include\time.hpp" />
-    <ClInclude Include="include\utf16_widen_narrow.hpp" />
     <ClInclude Include="include\verbosity.hpp" />
     <ClInclude Include="include\work_queue_traits.hpp" />
     <ClInclude Include="include\wrapped_allocator.hpp" />
-    <ClInclude Include="include\zlib.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\a3_vmm_alloc.cpp" />
     <ClCompile Include="src\alg.cpp" />
+    <ClCompile Include="src\filesystem.cpp" />
     <ClCompile Include="src\io_service_thread_pool.cpp" />
     <ClCompile Include="src\console_indent.cpp" />
     <ClCompile Include="src\console_color.cpp" />
@@ -192,18 +190,33 @@
     <ClCompile Include="src\lifecycle.cpp" />
     <ClCompile Include="src\log.cpp" />
     <ClCompile Include="src\log_expr_ops.cpp" />
-    <ClCompile Include="src\memory_status.cpp" />
-    <ClCompile Include="src\native\generic\utf16_widen_narrow.cpp" />
-    <ClCompile Include="src\native\vc_win\builtins.cpp" />
-    <ClCompile Include="src\native\vc_win\console.cpp" />
-    <ClCompile Include="src\native\vc_win\console_color.cpp" />
-    <ClCompile Include="src\native\vc_win\lifecycle.cpp" />
-    <ClCompile Include="src\native\vc_win\memory.cpp" />
-    <ClCompile Include="src\native\vc_win\native.cpp" />
-    <ClCompile Include="src\native\vc_win\stack_trace.cpp" />
-    <ClCompile Include="src\native\vc_win\time.cpp" />
-    <ClCompile Include="src\native\vc_win\utf16_widen_narrow.cpp" />
-    <ClCompile Include="src\native\vc_win\filesystem.cpp" />
+    <ClCompile Include="src\native\vc_win\memory_status.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\builtins.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\console.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\console_color.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\lifecycle.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\memory.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\native.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\stack_trace.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\native\vc_win\time.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="src\service_io_service_thread_pool.cpp" />
     <ClCompile Include="src\service_io_service.cpp" />
     <ClCompile Include="src\log_processor.cpp" />
@@ -214,11 +227,9 @@
     <ClCompile Include="src\service_simple_single_thread_executor.cpp" />
     <ClCompile Include="src\stack_trace.cpp" />
     <ClCompile Include="src\time.cpp" />
-    <ClCompile Include="src\zlib.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="include\buf.inl" />
-    <None Include="include\string_interpolation.inl" />
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="natvis\glm.natvis" />

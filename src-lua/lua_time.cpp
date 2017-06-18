@@ -1,8 +1,7 @@
 #include "lua_time.hpp"
 #include <be/core/time.hpp>
 
-namespace be {
-namespace belua {
+namespace be::belua {
 
 ///////////////////////////////////////////////////////////////////////////////
 const luaL_Reg time_module { "be.time", open_time };
@@ -82,4 +81,3 @@ int open_time(lua_State* L) {
 }
 
 } // be::belua
-} // be

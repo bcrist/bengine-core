@@ -1,6 +1,6 @@
 #pragma once
-#ifndef BE_PCH_HPP_
-#define BE_PCH_HPP_
+#ifndef BE_CORE_PCH_HPP_
+#define BE_CORE_PCH_HPP_
 
 #include <cstddef>
 #include <cstdint>

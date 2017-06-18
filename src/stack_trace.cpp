@@ -23,7 +23,7 @@ std::ostream& operator<<(std::ostream& os, const StackTrace& trace) {
       os << color::purple << info.symbol;
 
       if (!info.file.empty() || info.line != 0) {
-         os << color::dark_gray << " " << fs::relative_source_file(info.file) << " : " << std::dec << info.line;
+         os << color::dark_gray << " " << relative_source_file(info.file) << " : " << std::dec << info.line;
 
          if (info.line_displacement > 0) {
             os << " +" << info.line_displacement << 'B';

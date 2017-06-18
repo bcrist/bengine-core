@@ -25,12 +25,6 @@
     <Filter Include="Header Files\services\impl">
       <UniqueIdentifier>{d3eaccbd-a988-4df6-99ce-9c6012a08942}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\compression">
-      <UniqueIdentifier>{c439da4c-8490-446b-854d-a9233eaf8fc2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\compression">
-      <UniqueIdentifier>{070c6a34-733f-4241-84f1-74686878d0e2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\memory">
       <UniqueIdentifier>{0ec07515-5ebd-4ac1-a9c3-a409406cba60}</UniqueIdentifier>
     </Filter>
@@ -49,23 +43,14 @@
     <Filter Include="Header Files\iterator adapters">
       <UniqueIdentifier>{0bcf465b-b2ae-4d44-99d3-2a2fd291125a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\strings">
-      <UniqueIdentifier>{ec26dadb-4eba-45b8-a0fc-edda83893e9e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\native">
       <UniqueIdentifier>{9e504edd-e506-43ae-bfff-92b2f6729186}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\native\vc_win">
       <UniqueIdentifier>{03969a9e-4e27-4432-9be0-70cf10a03bf1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\native\generic">
-      <UniqueIdentifier>{3518b4c6-94e8-4f50-a3b2-3a241be0a308}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\native">
       <UniqueIdentifier>{5071e244-20ba-4d81-ac67-ac4138f0142a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\native\generic">
-      <UniqueIdentifier>{1fa03bc8-88cf-400e-abf3-a6db0cf55575}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\native\vc_win">
       <UniqueIdentifier>{913b8d02-bf80-4059-b192-839177eb1606}</UniqueIdentifier>
@@ -111,8 +96,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\pch.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\pch.hpp">
+      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="include\be.hpp">
       <Filter>Header Files</Filter>
@@ -159,15 +144,6 @@
     <ClInclude Include="include\log_attrib_ids.hpp">
       <Filter>Header Files\logging</Filter>
     </ClInclude>
-    <ClInclude Include="include\string_interpolation.hpp">
-      <Filter>Header Files\strings</Filter>
-    </ClInclude>
-    <ClInclude Include="include\zlib.hpp">
-      <Filter>Header Files\compression</Filter>
-    </ClInclude>
-    <ClInclude Include="include\utf16_widen_narrow.hpp">
-      <Filter>Header Files\strings</Filter>
-    </ClInclude>
     <ClInclude Include="include\buf.hpp">
       <Filter>Header Files\memory</Filter>
     </ClInclude>
@@ -195,9 +171,6 @@
     <ClInclude Include="include\t_is_container.hpp">
       <Filter>Header Files\templates</Filter>
     </ClInclude>
-    <ClInclude Include="include\filesystem.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\t_is_seed_seq.hpp">
       <Filter>Header Files\templates</Filter>
     </ClInclude>
@@ -222,9 +195,6 @@
     <ClInclude Include="include\wrapped_allocator.hpp">
       <Filter>Header Files\memory</Filter>
     </ClInclude>
-    <ClInclude Include="include\native\generic\memory.hpp">
-      <Filter>Header Files\native\generic</Filter>
-    </ClInclude>
     <ClInclude Include="include\native\vc_win\builtins.hpp">
       <Filter>Header Files\native\vc_win</Filter>
     </ClInclude>
@@ -239,9 +209,6 @@
     </ClInclude>
     <ClInclude Include="include\native.hpp">
       <Filter>Header Files\native</Filter>
-    </ClInclude>
-    <ClInclude Include="include\native\vc_win\vc_win_win32.hpp">
-      <Filter>Header Files\native\vc_win</Filter>
     </ClInclude>
     <ClInclude Include="include\service_mutex.hpp">
       <Filter>Header Files\services\impl</Filter>
@@ -486,6 +453,15 @@
     <ClInclude Include="include\enum_traits.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\native\vc_win\vc_win_win32.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\filesystem.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\native\vc_win\filesystem.hpp">
+      <Filter>Header Files\native\vc_win</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -503,22 +479,13 @@
     <ClCompile Include="src\console_log_sink.cpp">
       <Filter>Source Files\logging</Filter>
     </ClCompile>
-    <ClCompile Include="src\zlib.cpp">
-      <Filter>Source Files\compression</Filter>
-    </ClCompile>
     <ClCompile Include="src\time.cpp">
       <Filter>Source Files\time</Filter>
-    </ClCompile>
-    <ClCompile Include="src\native\generic\utf16_widen_narrow.cpp">
-      <Filter>Source Files\native\generic</Filter>
     </ClCompile>
     <ClCompile Include="src\native\vc_win\memory.cpp">
       <Filter>Source Files\native\vc_win</Filter>
     </ClCompile>
     <ClCompile Include="src\native\vc_win\time.cpp">
-      <Filter>Source Files\native\vc_win</Filter>
-    </ClCompile>
-    <ClCompile Include="src\native\vc_win\utf16_widen_narrow.cpp">
       <Filter>Source Files\native\vc_win</Filter>
     </ClCompile>
     <ClCompile Include="src\native\vc_win\native.cpp">
@@ -535,9 +502,6 @@
     </ClCompile>
     <ClCompile Include="src\console_indent.cpp">
       <Filter>Source Files\console</Filter>
-    </ClCompile>
-    <ClCompile Include="src\native\vc_win\filesystem.cpp">
-      <Filter>Source Files\native\vc_win</Filter>
     </ClCompile>
     <ClCompile Include="src\native\vc_win\stack_trace.cpp">
       <Filter>Source Files\native\vc_win</Filter>
@@ -572,7 +536,7 @@
     <ClCompile Include="src\service_simple_single_thread_executor.cpp">
       <Filter>Source Files\executors</Filter>
     </ClCompile>
-    <ClCompile Include="src\memory_status.cpp">
+    <ClCompile Include="src\native\vc_win\memory_status.cpp">
       <Filter>Source Files\native\vc_win</Filter>
     </ClCompile>
     <ClCompile Include="src\a3_vmm_alloc.cpp">
@@ -584,11 +548,11 @@
     <ClCompile Include="src\native\vc_win\builtins.cpp">
       <Filter>Source Files\native\vc_win</Filter>
     </ClCompile>
+    <ClCompile Include="src\filesystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="include\string_interpolation.inl">
-      <Filter>Header Files\strings</Filter>
-    </None>
     <None Include="include\buf.inl">
       <Filter>Header Files\memory</Filter>
     </None>

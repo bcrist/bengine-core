@@ -2,8 +2,7 @@
 #include <be/core/logging.hpp>
 #include <unordered_map>
 
-namespace be {
-namespace belua {
+namespace be::belua {
 
 ///////////////////////////////////////////////////////////////////////////////
 const luaL_Reg logging_module { "be.log", open_logging };
@@ -128,4 +127,3 @@ int open_logging(lua_State* L) {
 }
 
 } // be::belua
-} // be

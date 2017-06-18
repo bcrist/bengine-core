@@ -1,6 +1,6 @@
 #pragma once
-#ifndef BE_NATIVE_VC_WIN_BUILTINS_HPP_
-#define BE_NATIVE_VC_WIN_BUILTINS_HPP_
+#ifndef BE_CORE_NATIVE_VC_WIN_BUILTINS_HPP_
+#define BE_CORE_NATIVE_VC_WIN_BUILTINS_HPP_
 
 #include "vc_win.hpp"
 

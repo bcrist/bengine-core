@@ -1,9 +1,8 @@
 #include "pch.hpp"
 #include "console_log_sink.hpp"
 #include "time.hpp"
-#include "string_interpolation.hpp"
+#include "alg.hpp"
 #include "filesystem.hpp"
-#include <be/core/alg.hpp>
 #include <map>
 #include <iomanip>
 
@@ -46,7 +45,7 @@ S source_str(const LogRecord& rec) {
 
       S file;
       if (rec.file) {
-         file = fs::relative_source_file(rec.file);
+         file = relative_source_file(rec.file);
       } else {
          file = "?";
       }
@@ -197,24 +196,24 @@ void ConsoleLogSink::operator()(const LogRecord& rec, Log& log) {
 
       // attribute value
       for (const LogString& str : attr.contents) {
-         if (str.text.find('$') != S::npos) {
-            // interpolate string
-            interpolate_string_ex(str.text, [&](S text) {
-               output_log_string(*os, attr_initial_color, str.color, text, longest_attr_name + 2);
-            }, [&](S interpolant) {
-               Id interpolant_id = Id(interpolant);
-               auto it = attrib_id_map.find(interpolant_id);
-               if (it != attrib_id_map.end()) {
-                  for (const LogString& str : (it->second)->contents) {
-                     output_log_string(*os, attr_initial_color, str.color, str.text, longest_attr_name + 2);
-                  }
-               } else {
-                  *os << '?';
-               }
-            });
-         } else {
+         //if (str.text.find('$') != S::npos) {
+         //   // interpolate string
+         //   interpolate_string_ex(str.text, [&](S text) {
+         //      output_log_string(*os, attr_initial_color, str.color, text, longest_attr_name + 2);
+         //   }, [&](S interpolant) {
+         //      Id interpolant_id = Id(interpolant);
+         //      auto it = attrib_id_map.find(interpolant_id);
+         //      if (it != attrib_id_map.end()) {
+         //         for (const LogString& str : (it->second)->contents) {
+         //            output_log_string(*os, attr_initial_color, str.color, str.text, longest_attr_name + 2);
+         //         }
+         //      } else {
+         //         *os << '?';
+         //      }
+         //   });
+         //} else {
             output_log_string(*os, attr_initial_color, str.color, str.text, longest_attr_name + 2);
-         }
+         //}
       }
 
       if (rec.short_form) {

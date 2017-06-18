@@ -19,9 +19,6 @@
     <ClCompile Include="test\test_stack_trace.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
-    <ClCompile Include="test\test_string_interpolation.cpp">
-      <Filter>Tests</Filter>
-    </ClCompile>
     <ClCompile Include="test\test_thread_pool_executors.cpp">
       <Filter>Tests</Filter>
     </ClCompile>

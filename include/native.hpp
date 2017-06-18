@@ -11,9 +11,7 @@
 #  define BE_NATIVE(lib, x) <BE_CONCAT(be/,BE_CONCAT(lib,BE_CONCAT(/native/vc_win/,x)))>
 #  define BE_NATIVE_CORE(x) <BE_CONCAT(be/core/native/vc_win/,x)>
 #else
-#  define BE_NATIVE_GENERIC
-#  define BE_NATIVE(lib, x) <BE_CONCAT(be/,BE_CONCAT(lib,BE_CONCAT(/native/generic/,x)))>
-#  define BE_NATIVE_CORE(x) <BE_CONCAT(be/core/native/generic/,x)>
+#  error Unsupported compiler/platform!
 #endif
 
 namespace be {

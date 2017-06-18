@@ -1,4 +1,3 @@
-#include "pch.hpp"
 #include <be/core/native.hpp>
 #ifdef BE_NATIVE_VC_WIN
 

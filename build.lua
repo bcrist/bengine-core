@@ -2,11 +2,13 @@ module 'core' {
    lib {
       src {
          'src/*.cpp',
-         'src/native/*.cpp',
-         'src/native/$(toolchain)/*.cpp',
          exclude 'src/id.cpp',
          exclude 'src/namespaced_id.cpp',
          pch_src 'src/pch.cpp'
+      },
+      src {
+         'src/native/*.cpp',
+         'src/native/$(toolchain)/*.cpp'
       },
       define 'BE_CORE_IMPL',
       link_project 'zlib-static'

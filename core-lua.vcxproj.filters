@@ -14,13 +14,7 @@
     <ClInclude Include="include\lua_modules.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\lua_core_autolink.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\lua_id.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\lua_interpolate_string.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\lua_logging.hpp">
@@ -29,12 +23,12 @@
     <ClInclude Include="include\lua_time.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\core_lua_autolink.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src-lua\lua_id.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src-lua\lua_interpolate_string.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src-lua\lua_logging.cpp">
