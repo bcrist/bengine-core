@@ -23,8 +23,6 @@
 #define be_short_verbose(...) ::be::log_short_verbose(__VA_ARGS__).filename(__FILE__).line(__LINE__)
 #define be_short_debug(...)  if (::be::detail::DebugLog::value) ::be::log_short_debug(__VA_ARGS__).filename(__FILE__).line(__LINE__)
 
-#define BE_LOG_INTERP(x) "$(" x ")"
-
 namespace be {
 
 detail::LogEntry log(v::Verbosity verbosity, const char* source = nullptr);

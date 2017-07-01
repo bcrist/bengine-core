@@ -6,39 +6,25 @@
 
 namespace be {
 
-template <typename ErrorType = void>
-class RecoverableException : public std::runtime_error {
+///////////////////////////////////////////////////////////////////////////////
+class RecoverableError : public std::system_error {
 public:
-   template <typename... Ts>
-   explicit RecoverableException(ErrorType error, Ts&&... args)
-      : std::runtime_error(std::forward<Ts>(args)...),
-        err_(std::move(error)) { }
-
-   const ErrorType& error() const {
-      return err_;
-   }
-
-private:
-   ErrorType err_;
+   explicit RecoverableError(std::error_code ec);
+   RecoverableError(std::error_code ec, const S& msg);
+   RecoverableError(std::error_code ec, const char* msg);
 };
 
-template <>
-class RecoverableException<void> : public std::runtime_error {
+///////////////////////////////////////////////////////////////////////////////
+class FatalError : public std::system_error {
 public:
-   template <typename... Ts>
-   explicit RecoverableException(Ts&&... args)
-      : std::runtime_error(std::forward<Ts>(args)...) { }
-};
-class FatalException : public std::runtime_error {
-public:
-   template <typename... Ts>
-   explicit FatalException(Ts&&... args)
-      : std::runtime_error(std::forward<Ts>(args)...) { }
+   explicit FatalError(std::error_code ec);
+   FatalError(std::error_code ec, const S& msg);
+   FatalError(std::error_code ec, const char* msg);
 };
 
-template <typename ErrorType = void>
-using Recoverable = StackTraceException<RecoverableException<ErrorType>>;
-using Fatal = StackTraceException<FatalException>;
+///////////////////////////////////////////////////////////////////////////////
+using RecoverableTrace = StackTraceException<RecoverableError>;
+using FatalTrace = StackTraceException<FatalError>;
 
 } // be
 

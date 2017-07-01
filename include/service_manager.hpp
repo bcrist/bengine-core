@@ -76,9 +76,7 @@ public:
 
       Log* log = log_();
       if (log) {
-         be_short_debug() << "Initializing " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service manager..."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
-            || *log;
+         be_short_debug() << "Initializing " << name_func()() << " service manager..." || *log;
       }
 
       construct_(default_service_, typename traits::preemptive_default());
@@ -88,9 +86,7 @@ public:
       }
       
       if (log) {
-         be_short_debug() << BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service manager initialized."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
-            || *log;
+         be_short_debug() << name_func()() << " service manager initialized." || *log;
       }
    }
 
@@ -137,9 +133,7 @@ public:
       
       Log* log = log_();
       if (log) {
-         be_short_debug() << "Shutting down " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service manager..."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
-            || *log;
+         be_short_debug() << "Shutting down " << name_func()() << " service manager..." || *log;
       }
       
       for (auto it = construction_order_.rbegin(); it != construction_order_.rend(); ++it) {
@@ -154,9 +148,7 @@ public:
       }
 
       if (log) {
-         be_short_debug() << BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service manager shut down."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
-            || *log;
+         be_short_debug() << name_func()() << " service manager shut down." || *log;
       }
    }
 
@@ -168,9 +160,7 @@ public:
 
       Log* log = log_();
       if (log) {
-         be_short_debug() << "Cleaning up " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service manager..."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
-            || *log;
+         be_short_debug() << "Cleaning up " << name_func()() << " service manager..." || *log;
       }
 
       for (auto it = construction_order_.rbegin(); it != construction_order_.rend(); ++it) {
@@ -185,9 +175,7 @@ public:
       }
 
       if (log) {
-         be_short_debug() << BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service manager cleaned up."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
-            || *log;
+         be_short_debug() << name_func()() << " service manager cleaned up." || *log;
       }
    }
 
@@ -225,17 +213,13 @@ private:
       assert(!is_shutdown_);
       Log* log = log_();
       if (log) {
-         be_short_debug() << "Constructing default " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service..."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
-            || *log;
+         be_short_debug() << "Constructing default " << name_func()() << " service..." || *log;
       }
       factory_func factory;
       ptr = factory(Id());
       construction_order_.emplace_back(Id(), &ptr);
       if (log) {
-         be_short_debug() << "Default " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service initialized."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
-            || *log;
+         be_short_debug() << "Default " << name_func()() << " service initialized." || *log;
       }
    }
 
@@ -244,8 +228,7 @@ private:
       assert(!is_shutdown_);
       Log* log = log_();
       if (log) {
-         be_debug() << "Constructing " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service..."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
+         be_debug() << "Constructing " << name_func()() << " service..."
             & attr(BEIDN_LOG_ATTR_SERVICE_ID) << id
             || *log;
       }
@@ -253,8 +236,7 @@ private:
       ptr = factory(id);
       construction_order_.emplace_back(id, &ptr);
       if (log) {
-         be_debug() << BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service initialized."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
+         be_debug() << name_func()() << " service initialized."
             & attr(BEIDN_LOG_ATTR_SERVICE_ID) << id
             || *log;
       }
@@ -264,15 +246,12 @@ private:
    void shutdown_() {
       Log* log = log_();
       if (log) {
-         be_short_debug() << "Shutting down default " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service..."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
-            || *log;
+         be_short_debug() << "Shutting down default " << name_func()() << " service..." || *log;
       }
       shutdown_func shutdown;
       shutdown(default_service_);
       if (log) {
-         be_debug() << "Default " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service shut down."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
+         be_debug() << "Default " << name_func()() << " service shut down."
             & attr(BEIDN_LOG_ATTR_DESTROYED) << !default_service_
             || *log;
       }
@@ -282,16 +261,14 @@ private:
    void shutdown_(unique_service& service, Id id) {
       Log* log = log_();
       if (log) {
-         be_debug() << "Shutting down " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service..."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
+         be_debug() << "Shutting down " << name_func()() << " service..."
             & attr(BEIDN_LOG_ATTR_SERVICE_ID) << id
             || *log;
       }
       shutdown_func shutdown;
       shutdown(service);
       if (log) {
-         be_debug() << BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service shut down."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
+         be_debug() << name_func()() << " service shut down."
             & attr(BEIDN_LOG_ATTR_SERVICE_ID) << id
             & attr(BEIDN_LOG_ATTR_DESTROYED) << !service
             || *log;
@@ -302,15 +279,12 @@ private:
    void cleanup_() {
       Log* log = log_();
       if (log) {
-         be_short_debug() << "Cleaning up default " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service..."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
-            || *log;
+         be_short_debug() << "Cleaning up default " << name_func()() << " service..." || *log;
       }
       cleanup_func cleanup;
       cleanup(default_service_);
       if (log) {
-         be_debug() << "Default " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service cleaned up."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
+         be_debug() << "Default " << name_func()() << " service cleaned up."
             & attr(BEIDN_LOG_ATTR_DESTROYED) << !default_service_
             || *log;
       }
@@ -320,16 +294,14 @@ private:
    void cleanup_(unique_service& service, Id id) {
       Log* log = log_();
       if (log) {
-         be_debug() << "Cleaning up " BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service..."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
+         be_debug() << "Cleaning up " << name_func()() << " service..."
             & attr(BEIDN_LOG_ATTR_SERVICE_ID) << id
             || *log;
       }
       cleanup_func cleanup;
       cleanup(service);
       if (log) {
-         be_debug() << BE_LOG_INTERP(BEIDN_LOG_ATTR_SERVICE_TYPE) " service cleaned up."
-            & hidden(BEIDN_LOG_ATTR_SERVICE_TYPE) << name_func()()
+         be_debug() << name_func()() << " service cleaned up."
             & attr(BEIDN_LOG_ATTR_SERVICE_ID) << id
             & attr(BEIDN_LOG_ATTR_DESTROYED) << !service
             || *log;

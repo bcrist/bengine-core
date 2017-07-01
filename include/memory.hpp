@@ -96,6 +96,20 @@ S type_name() {
    return name;
 }
 
+template <std::uintptr_t A, typename T>
+constexpr T* aligned_ptr(T* ptr) {
+   std::uintptr_t u = reinterpret_cast<std::uintptr_t>(ptr);
+   static_assert(0ull == (A & (A - std::uintptr_t(1))), "Alignment must be a power of 2");
+   return reinterpret_cast<T*>((u - std::uintptr_t(1)) & ~(A - std::uintptr_t(1)) + A);
+}
+
+template <typename T>
+T* aligned_ptr(T* ptr, std::uintptr_t alignment) {
+   std::uintptr_t u = reinterpret_cast<std::uintptr_t>(ptr);
+   assert(std::uintptr_t(0) == (alignment & (alignment - std::uintptr_t(1))));
+   return reinterpret_cast<T*>(((u - std::uintptr_t(1)) & ~(alignment - std::uintptr_t(1))) + alignment);
+}
+
 template <std::size_t A, typename T>
 constexpr T aligned_size(T size) {
    static_assert(std::is_unsigned<T>::value, "Type must be unsigned");
