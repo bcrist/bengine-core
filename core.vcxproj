@@ -108,6 +108,7 @@
     <ClInclude Include="include\id_collision_handler.hpp" />
     <ClInclude Include="include\lifecycle.hpp" />
     <ClInclude Include="include\io_service.hpp" />
+    <ClInclude Include="include\log_exception.hpp" />
     <ClInclude Include="include\macros.hpp" />
     <ClInclude Include="include\memory_status.hpp" />
     <ClInclude Include="include\namespaced_id_bo.hpp" />
@@ -133,6 +134,7 @@
     <ClInclude Include="include\thread_pool_executor.hpp" />
     <ClInclude Include="include\thread_pool_executors.hpp" />
     <ClInclude Include="include\t_covering_unsigned.hpp" />
+    <ClInclude Include="include\t_integer.hpp" />
     <ClInclude Include="include\t_is_char.hpp" />
     <ClInclude Include="include\version.hpp" />
     <ClInclude Include="include\work_queues.hpp" />
@@ -167,7 +169,7 @@
     <ClInclude Include="include\small_triplet.hpp" />
     <ClInclude Include="include\t_is_container.hpp" />
     <ClInclude Include="include\t_is_iterator.hpp" />
-    <ClInclude Include="include\t_is_same_size.hpp" />
+    <ClInclude Include="include\t_size.hpp" />
     <ClInclude Include="include\t_is_seed_seq.hpp" />
     <ClInclude Include="include\t_is_simple_alloc.hpp" />
     <ClInclude Include="include\t_pred.hpp" />
@@ -190,6 +192,7 @@
     <ClCompile Include="src\id_collision_handler.cpp" />
     <ClCompile Include="src\lifecycle.cpp" />
     <ClCompile Include="src\log.cpp" />
+    <ClCompile Include="src\log_exception.cpp" />
     <ClCompile Include="src\log_expr_ops.cpp" />
     <ClCompile Include="src\native\vc_win\memory_status.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>

@@ -4,8 +4,7 @@
 
 #include "t_select.hpp"
 
-namespace be {
-namespace t {
+namespace be::t {
 
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief  Determines if a type is a container.
@@ -77,6 +76,5 @@ template <typename T>
 struct IsInsertContainer : detail::IsInsertContainerHelper<T>::type { };
 
 } // be::t
-} // be
 
 #endif

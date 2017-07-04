@@ -4,8 +4,7 @@
 
 #include "be.hpp"
 
-namespace be {
-namespace t {
+namespace be::t {
 
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief  Determines if a type is an iterator.
@@ -16,6 +15,5 @@ template <typename T, typename = void> struct IsIterator : False { };
 template <typename T> struct IsIterator<T, std::void_t<typename std::iterator_traits<T>::iterator_category>> : True { };
 
 } // be::t
-} // be
 
 #endif

@@ -4,8 +4,7 @@
 
 #include "be.hpp"
 
-namespace be {
-namespace t {
+namespace be::t {
 
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief  Selects between one of two types based on the first template
@@ -25,6 +24,5 @@ struct Select<true, T, U> {
 };
 
 } // be::t
-} // be
 
 #endif

@@ -4,8 +4,7 @@
 
 #include "be.hpp"
 
-namespace be {
-namespace t {
+namespace be::t {
 namespace detail {
 
 template<typename T>
@@ -45,6 +44,5 @@ template <typename T, typename S, typename E, typename D>
 struct IsSeedSeq<T, S, E, D, true> : True { };
 
 } // be::t
-} // be
 
 #endif

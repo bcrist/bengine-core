@@ -4,8 +4,7 @@
 
 #include "t_pred.hpp"
 
-namespace be {
-namespace t {
+namespace be::t {
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename A>
@@ -19,6 +18,5 @@ struct IsSimpleAlloc : Pred<
 { };
 
 } // be::t
-} // be
 
 #endif

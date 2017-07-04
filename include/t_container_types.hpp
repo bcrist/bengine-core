@@ -6,8 +6,7 @@
 #include "t_is_simple_alloc.hpp"
 #include "wrapped_allocator.hpp"
 
-namespace be {
-namespace t {
+namespace be::t {
 
 template <typename T, typename S, typename D, typename P, typename CP, typename R, typename CR>
 struct IteratorTypes {
@@ -47,6 +46,5 @@ struct ContainerTypes {
 };
 
 } // be::t
-} // be
 
 #endif

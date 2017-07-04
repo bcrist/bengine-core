@@ -174,9 +174,6 @@
     <ClInclude Include="include\t_is_seed_seq.hpp">
       <Filter>Header Files\templates</Filter>
     </ClInclude>
-    <ClInclude Include="include\t_is_same_size.hpp">
-      <Filter>Header Files\templates</Filter>
-    </ClInclude>
     <ClInclude Include="include\small_triplet.hpp">
       <Filter>Header Files\EBCO utils</Filter>
     </ClInclude>
@@ -462,6 +459,15 @@
     <ClInclude Include="include\native\vc_win\filesystem.hpp">
       <Filter>Header Files\native\vc_win</Filter>
     </ClInclude>
+    <ClInclude Include="include\t_integer.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_size.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\log_exception.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -553,6 +559,9 @@
     </ClCompile>
     <ClCompile Include="src\exceptions.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\log_exception.cpp">
+      <Filter>Source Files\logging</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

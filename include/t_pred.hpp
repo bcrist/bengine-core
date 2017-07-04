@@ -4,8 +4,7 @@
 
 #include "be.hpp"
 
-namespace be {
-namespace t {
+namespace be::t {
 
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief  Compile-time predicate type.
@@ -15,6 +14,5 @@ template <bool> struct Pred : False { };
 template <> struct Pred<true> : True { };
 
 } // be::t
-} // be
 
 #endif

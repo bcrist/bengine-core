@@ -4,8 +4,7 @@
 
 #include "be.hpp"
 
-namespace be {
-namespace t {
+namespace be::t {
 namespace detail {
 
 template <std::size_t N, bool = (N < (1ull << 8)), bool = (N < (1ull << 16)), bool = (N < 1ull << 32)>
@@ -37,6 +36,5 @@ template <std::size_t N>
 using CoveringUnsigned = typename detail::CoveringUnsigned<N>::type;
 
 } // be::t
-} // be
 
 #endif

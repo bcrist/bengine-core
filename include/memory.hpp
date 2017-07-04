@@ -39,17 +39,6 @@ using SC = signed char;
 using UI = unsigned int;
 using SI = signed int;
 
-template <typename T>
-using SizeTag = Tag<std::size_t, sizeof(T)>;
-
-template <typename T>
-using AlignTag = Tag<std::size_t, alignof(T)>;
-
-template <typename T, std::size_t ExpectedSize, std::size_t ActualSize = sizeof(T)>
-struct SizeIs : False {};
-template <typename T, std::size_t Size>
-struct SizeIs<T, Size, Size> : True {};
-
 namespace bo {
 // Byte-order conversion
 
@@ -57,29 +46,6 @@ template <typename T, std::size_t N = sizeof(T), bool = std::is_integral<T>::val
 struct Converter;
 
 } // be::bo
-
-namespace detail {
-
-template <std::size_t N>
-struct IntegerType { };
-template <> struct IntegerType<sizeof(I8)> { using type = I8; };
-template <> struct IntegerType<sizeof(I16)> { using type = I16; };
-template <> struct IntegerType<sizeof(I32)> { using type = I32; };
-template <> struct IntegerType<sizeof(I64)> { using type = I64; };
-
-template <std::size_t N>
-struct UnsignedType { };
-template <> struct UnsignedType<sizeof(U8)> { using type = U8; };
-template <> struct UnsignedType<sizeof(U16)> { using type = U16; };
-template <> struct UnsignedType<sizeof(U32)> { using type = U32; };
-template <> struct UnsignedType<sizeof(U64)> { using type = U64; };
-
-} // be::detail
-
-template <std::size_t N>
-using Integer = typename detail::IntegerType<N>::type;
-template <std::size_t N>
-using Unsigned = typename detail::UnsignedType<N>::type;
 
 template <typename T>
 S type_name() {

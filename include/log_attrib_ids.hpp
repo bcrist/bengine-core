@@ -3,9 +3,9 @@
    'Message','Category','Code','Description','Error','Error Code','Exception','Trace','Found','Expected',
    'ID','Name','Keyword','Type','Count','Index','Version',
    'Argument','Value','Existing Value','Old Value','New Value','Option','Path','Search Path','Input Path','Output Path',
-   'Input','Output','Source','Destination','Filename','Service Type','Service ID','Destroyed'
+   'Input','Output','Source','Destination','Filename','Service Type','Service ID','Destroyed','Query'
    
-}) !! 172 */
+}) !! 176 */
 /* ################# !! GENERATED CODE -- DO NOT MODIFY !! ################# */
 #pragma once
 #ifndef BE_CORE_LOG_ATTRIB_IDS_HPP_
@@ -83,6 +83,8 @@
 #define  BEID_LOG_ATTR_SERVICE_ID     0x56436BAA12B67201
 #define BEIDN_LOG_ATTR_DESTROYED      "Destroyed"
 #define  BEID_LOG_ATTR_DESTROYED      0x25A147555F2C106C
+#define BEIDN_LOG_ATTR_QUERY          "Query"
+#define  BEID_LOG_ATTR_QUERY          0xC74B7675F65C3E23
 
 #ifdef BE_ID_EXTERNS
 
@@ -124,6 +126,7 @@ extern const Id log_attr_filename;
 extern const Id log_attr_service_type;
 extern const Id log_attr_service_id;
 extern const Id log_attr_destroyed;
+extern const Id log_attr_query;
 
 } // be::ids
 } // be
@@ -170,6 +173,7 @@ const Id log_attr_filename = Id(BEIDN_LOG_ATTR_FILENAME);
 const Id log_attr_service_type = Id(BEIDN_LOG_ATTR_SERVICE_TYPE);
 const Id log_attr_service_id = Id(BEIDN_LOG_ATTR_SERVICE_ID);
 const Id log_attr_destroyed = Id(BEIDN_LOG_ATTR_DESTROYED);
+const Id log_attr_query = Id(BEIDN_LOG_ATTR_QUERY);
 
 } // be::ids
 } // be

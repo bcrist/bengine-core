@@ -3,6 +3,7 @@
 #define BE_CORE_ID_HPP_
 
 #include "be.hpp"
+#include "t_size.hpp"
 
 #ifdef DOXYGEN
 
@@ -154,15 +155,15 @@ template<> struct std::hash<be::Id> final {
    /// \param id The Id to hash.
    /// \return A hashcode suitable for use in hashtable-based data structures.   
    constexpr std::size_t operator()(const be::Id& id) const noexcept {
-      return hash_(id, be::SizeTag<std::size_t>());
+      return hash_(id, be::t::SizeTag<std::size_t>());
    }
 
 private:
-   constexpr std::size_t hash_(const be::Id& id, be::SizeTag<be::U32>) const noexcept {
+   constexpr std::size_t hash_(const be::Id& id, be::t::SizeTag<be::U32>) const noexcept {
       return static_cast<std::size_t>(be::U64(id) ^ (be::U64(id) >> 32));
    }
 
-   constexpr std::size_t hash_(const be::Id& id, be::SizeTag<be::U64>) const noexcept {
+   constexpr std::size_t hash_(const be::Id& id, be::t::SizeTag<be::U64>) const noexcept {
       return static_cast<std::size_t>(be::U64(id));
    }
 
