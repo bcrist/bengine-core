@@ -5,6 +5,7 @@
 #include "be.hpp"
 #include "work_queue_traits.hpp"
 #include "time.hpp"
+#include "t_select.hpp"
 #include <functional>
 #include <mutex>
 
@@ -14,9 +15,8 @@ namespace be {
 template <typename WorkQueue>
 class SynchronizedWorkQueue : WorkQueue {
    using traits_type = WorkQueueTraits<WorkQueue>;
-   using priority_enable_type = std::enable_if_t<traits_type::supports_priorities::value, typename traits_type::priority_type>;
 public:
-   using priority_type = typename traits_type::priority_type;
+   using priority_type = typename t::Select<traits_type::supports_priorities::value, typename traits_type::priority_type, Nil>::type;
 
    SynchronizedWorkQueue() = default;
 
@@ -34,12 +34,14 @@ public:
       return *this;
    }
 
-   priority_enable_type default_priority() const {
+   template <typename = std::enable_if_t<traits_type::supports_priorities::value>>
+   priority_type default_priority() const {
       std::lock_guard<std::mutex> guard(mutex_);
       return static_cast<const WorkQueue*>(this)->default_priority();
    }
 
-   void default_priority(priority_enable_type priority) {
+   template <typename = std::enable_if_t<traits_type::supports_priorities::value>>
+   void default_priority(priority_type priority) {
       std::lock_guard<std::mutex> guard(mutex_);
       static_cast<WorkQueue*>(this)->default_priority(priority);
    }
@@ -50,7 +52,8 @@ public:
       cv_.notify_one();
    }
 
-   void post(std::function<void()> func, priority_enable_type priority) {
+   template <typename = std::enable_if_t<traits_type::supports_priorities::value>>
+   void post(std::function<void()> func, priority_type priority) {
       std::lock_guard<std::mutex> guard(mutex_);
       static_cast<WorkQueue*>(this)->post(std::move(func), priority);
       cv_.notify_one();
