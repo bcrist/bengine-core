@@ -318,7 +318,7 @@ private:
    }
 
    Log* log_(False) const {
-      return &service<Log>();
+      return &(default_log());
    }
 
    unique_service default_service_;

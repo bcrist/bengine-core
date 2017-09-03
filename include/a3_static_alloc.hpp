@@ -30,6 +30,8 @@ struct AllocTraits<StaticAlloc<Size, Alignment>> : AllocTraits<void> {
 ///         one call to allocate() is made until deallocate() is called.
 template <std::size_t Size, std::size_t Alignment>
 class StaticAlloc : public BaseAlloc<StaticAlloc<Size, Alignment>>, Immovable {
+   using base_type = BaseAlloc<StaticAlloc>;
+   using alloc_type = typename base_type::alloc_type;
 public:
    static constexpr std::size_t preferred_size(std::size_t size) {
       BE_IGNORE(size);

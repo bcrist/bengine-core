@@ -22,7 +22,7 @@ struct generic_extents {
    T end() const     { return offset + T(dim); }
    U width() const   { return dim; }
 
-   T center() const  { return offset + T(dim) / T(2) }
+   T center() const  { return offset + T(dim) / T(2); }
 
    bool operator==(const type& other) const {
       return offset == other.offset && dim == other.dim;

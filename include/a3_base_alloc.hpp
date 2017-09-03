@@ -86,7 +86,6 @@ struct AllocTraits {
 template <typename Alloc>
 class BaseAlloc {
 protected:
-   using base_type = BaseAlloc<Alloc>;
    using alloc_type = Alloc;
 public:
    using traits = AllocTraits<Alloc>;

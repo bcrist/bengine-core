@@ -89,8 +89,6 @@ struct ConvertBase {
       v = Converter<T>::convert<FromTag::value, ToTag::value>(v);
    }
 
-protected:
-   using base = ConvertBase<T>;
 };
 
 // 1-byte objects have no byte order by definition
@@ -107,21 +105,21 @@ struct Converter<T, 1, I, F> : ConvertBase<T> {
 
 template <typename T>
 struct Converter<T, 2, true, false> : ConvertBase<T> {
-   using base::convert;
+   using ConvertBase<T>::convert;
    static T convert(T v, Little, Big) { return static_cast<T>(BE_BSWAP_U16(v)); }
    static T convert(T v, Big, Little) { return static_cast<T>(BE_BSWAP_U16(v)); }
 };
 
 template <typename T>
 struct Converter<T, 4, true, false> : ConvertBase<T> {
-   using base::convert;
+   using ConvertBase<T>::convert;
    static T convert(T v, Little, Big) { return static_cast<T>(BE_BSWAP_U32(v)); }
    static T convert(T v, Big, Little) { return static_cast<T>(BE_BSWAP_U32(v)); }
 };
 
 template <typename T>
 struct Converter<T, 8, true, false> : ConvertBase<T> {
-   using base::convert;
+   using ConvertBase<T>::convert;
    static T convert(T v, Little, Big) { return static_cast<T>(BE_BSWAP_U64(v)); }
    static T convert(T v, Big, Little) { return static_cast<T>(BE_BSWAP_U64(v)); }
 };
@@ -130,7 +128,7 @@ struct Converter<T, 8, true, false> : ConvertBase<T> {
 
 template <>
 struct Converter<F32, 4, false, true> : ConvertBase<F32> {
-   using base::in_place;
+   using ConvertBase<F32>::in_place;
    static void in_place(type& v, Little, Big) { reverse(v); }
    static void in_place(type& v, Big, Little) { reverse(v); }
    static void reverse(type& v) {
@@ -143,7 +141,7 @@ struct Converter<F32, 4, false, true> : ConvertBase<F32> {
 
 template <>
 struct Converter<F64, 8, false, true> : ConvertBase<F64> {
-   using base::in_place;
+   using ConvertBase<F64>::in_place;
    static void in_place(type& v, Little, Big) { reverse(v); }
    static void in_place(type& v, Big, Little) { reverse(v); }
    static void reverse(type& v) {

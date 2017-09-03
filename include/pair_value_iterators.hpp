@@ -9,32 +9,34 @@ namespace be {
 ///////////////////////////////////////////////////////////////////////////////
 template <typename I>
 class PairFirstIterator : boost::iterator_adaptor<PairFirstIterator<I>, I, typename I::value_type::first_type> {
+   using base = boost::iterator_adaptor<PairFirstIterator<I>, I, typename I::value_type::first_type>;
    friend class boost::iterator_core_access;
 public:
    PairFirstIterator() { }
    explicit PairFirstIterator(I const& iter)
-      : PairFirstIterator::iterator_adaptor_(iter)
+      : base::iterator_adaptor_(iter)
    { }
 
 private:
-   typename iterator_adaptor_::reference dereference() const {
-      return base_reference()->first;
+   typename base::iterator_adaptor_::reference dereference() const {
+      return this->base_reference()->first;
    }
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename I>
 class PairSecondIterator : boost::iterator_adaptor<PairSecondIterator<I>, I, typename I::value_type::second_type> {
+   using base = boost::iterator_adaptor<PairSecondIterator<I>, I, typename I::value_type::second_type>;
    friend class boost::iterator_core_access;
 public:
    PairSecondIterator() { }
    explicit PairSecondIterator(I const& iter)
-      : PairSecondIterator::iterator_adaptor_(iter)
+      : base::iterator_adaptor_(iter)
    { }
 
 private:
-   typename iterator_adaptor_::reference dereference() const {
-      return base_reference()->second;
+   typename base::iterator_adaptor_::reference dereference() const {
+      return this->base_reference()->second;
    }
 };
 

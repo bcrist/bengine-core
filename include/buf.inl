@@ -102,13 +102,13 @@ Buf<T, C>::Buf(Buf<T, C>&& other)
    : detail::BufBase<T>(other.get(), other.size(), nullptr)
 {
    using std::swap;
-   swap(deleter_, other.deleter_);
+   swap(this->deleter_, other.deleter_);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T, bool C>
 Buf<T, C>& Buf<T, C>::operator=(Buf<T, C>&& other) {
-   assign_(other);
+   this->assign_(other);
    return *this;
 }
 
@@ -124,7 +124,7 @@ Buf<const T, C>::Buf(Buf<const T, C>&& other)
    : detail::BufBase<const T>(other.get(), other.size(), nullptr)
 {
    using std::swap;
-   swap(deleter_, other.deleter_);
+   swap(this->deleter_, other.deleter_);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -133,7 +133,7 @@ Buf<const T, C>::Buf(Buf<T, C>&& other)
    : detail::BufBase<const T>(other.get(), other.size(), nullptr)
 {
    using std::swap;
-   swap(deleter_, other.deleter_);
+   swap(this->deleter_, other.deleter_);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -157,7 +157,7 @@ Buf<T, true>::Buf(Buf<U>&& other)
                         other.size() * sizeof(U), nullptr)
 {
    using std::swap;
-   swap(deleter_, other.deleter_);
+   swap(this->deleter_, other.deleter_);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -181,13 +181,13 @@ Buf<const T, true>::Buf(Buf<U>&& other)
                               other.size() * sizeof(U), nullptr)
 {
    using std::swap;
-   swap(deleter_, other.deleter_);
+   swap(this->deleter_, other.deleter_);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T>
 Buf<const T, true>& Buf<const T, true>::operator=(Buf<const T, true>&& other) {
-   assign_(other);
+   this->assign_(other);
    return *this;
 }
 
@@ -416,7 +416,7 @@ Buf<T> concat_buf(const Buf<U>& first, const Buf<V>& second) {
       if (second) {
          memcpy(static_cast<char*>(static_cast<void*>(mbuf.get())) + first.size() * sizeof(U), second.get(), second.size() * sizeof(V));
       }
-      buf = Buf<T>(std::move(mbuf))
+      buf = Buf<T>(std::move(mbuf));
    }
    return buf;
 }

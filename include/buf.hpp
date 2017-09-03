@@ -8,7 +8,8 @@
 
 namespace be {
 
-template <typename T = char, bool C = t::IsChar<std::remove_cv_t<T>>::value> class Buf;
+template <typename T = char, bool C = t::IsChar<std::remove_cv_t<T>>::value>
+class Buf;
 
 namespace detail {
 
@@ -56,9 +57,11 @@ protected:
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief  buffer of non-const non-char
 template <typename T, bool C>
-class Buf final : public detail::BufBase<T> {
+class Buf final : public ::be::detail::BufBase<T> {
    friend void swap(Buf<T, C>& a, Buf<T, C>& b) { a.swap_(b); }
+   using base = ::be::detail::BufBase<T>;
 public:
+   using typename base::deleter;
    Buf() { }
    Buf(T* buf, std::size_t size, deleter del = nullptr);
    Buf(Buf<T, C>&& other);
@@ -70,7 +73,9 @@ public:
 template <typename T, bool C>
 class Buf<const T, C> final : public ::be::detail::BufBase<const T> {
    friend void swap(Buf<const T, C>& a, Buf<const T, C>& b) { a.swap_(b); }
+   using base = ::be::detail::BufBase<const T>;
 public:
+   using typename base::deleter;
    Buf() { }
    Buf(const T* buf, std::size_t size, deleter deleter = nullptr);
    Buf(Buf<const T, C>&& other);
@@ -83,7 +88,9 @@ public:
 template <typename T>
 class Buf<T, true> final : public ::be::detail::BufBase<T> {
    friend void swap(Buf<T, true>& a, Buf<T, true>& b) { a.swap_(b); }
+   using base = ::be::detail::BufBase<T>;
 public:
+   using typename base::deleter;
    Buf() { }
    Buf(T* buf, std::size_t size, deleter deleter = nullptr);
    template <typename U> Buf(Buf<U>&& other);
@@ -95,7 +102,9 @@ public:
 template <typename T>
 class Buf<const T, true> final : public ::be::detail::BufBase<const T> {
    friend void swap(Buf<const T, true>& a, Buf<const T, true>& b) { a.swap_(b); }
+   using base = ::be::detail::BufBase<const T>;
 public:
+   using typename base::deleter;
    Buf() { }
    Buf(const T* buf, std::size_t size, deleter deleter = nullptr);
    template <typename U> Buf(Buf<U>&& other);
