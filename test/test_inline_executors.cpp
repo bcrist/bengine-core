@@ -60,7 +60,7 @@ TEST_CASE("be::InlineExecutor<be::SimpleWorkQueue>", BE_CATCH_TAGS) {
 
       REQUIRE(!executor.run_one());
    }
-   
+
    SECTION("run()") {
       REQUIRE(executor.run(1));
 
@@ -110,7 +110,7 @@ TEST_CASE("be::InlineExecutor<be::SimpleWorkQueue>", BE_CATCH_TAGS) {
 
          REQUIRE(!executor.empty());
          REQUIRE(executor.size() == 1);
-         
+
          REQUIRE(executor.run());
 
          REQUIRE(executor.empty());

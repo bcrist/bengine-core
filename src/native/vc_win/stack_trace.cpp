@@ -118,7 +118,7 @@ StackFrameSymbolInfo get_stack_frame_symbol_info(std::uintptr_t address) {
             ::WideCharToMultiByte(CP_UTF8, 0, symbol_info->Name, (int)symbol_info->NameLen, &info.symbol[0], size, NULL, NULL);
          }
       }
-      
+
       {
          ::IMAGEHLP_MODULEW64 module;
          module.SizeOfStruct = sizeof(module);

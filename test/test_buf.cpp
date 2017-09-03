@@ -27,7 +27,7 @@ TEST_CASE("be::Buf empty buffer", BE_CATCH_TAGS) {
       REQUIRE((const UC*)buf == nullptr);
       REQUIRE(buf.get() == nullptr);
    }
-   
+
    SECTION("nonnull pointer with zero size") {
       UC x;
       Buf<UC> buf(&x, 0);
@@ -148,10 +148,10 @@ TEST_CASE("be::Buf deleter", BE_CATCH_TAGS) {
          REQUIRE(buf2.is_owner());
          REQUIRE(deletion_count == 0);
       }
-      
+
       REQUIRE(deletion_count == 1);
    }
-   
+
    SECTION("release") {
       int* ptr = new int[5];
       {
@@ -169,7 +169,7 @@ TEST_CASE("be::Buf deleter", BE_CATCH_TAGS) {
          REQUIRE(buf.get() == ptr);
          REQUIRE(buf.size() == 5);
       }
-      
+
       REQUIRE(deletion_count == 0);
       delete[] ptr;
    }

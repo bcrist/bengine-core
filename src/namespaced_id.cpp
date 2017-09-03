@@ -44,7 +44,7 @@ S get_canonical_id_string(const NamespacedId& nsid) {
    U64 idVal = (U64)nsid.id;
    auto it = str.rbegin(); // fill in reverse order
    *(it++) = '}';
-   if (idVal) {      
+   if (idVal) {
       for (int i = 0; i < 16; ++i) {
          *it = "0123456789ABCDEF"[idVal & 0xF];
          idVal >>= 4;
@@ -82,7 +82,7 @@ constexpr bool NamespacedId::operator==(const NamespacedId& other) const noexcep
 /// \brief  Compares this NamespacedId with another to see if they have
 ///         reference different things.
 ///
-/// \details At least one of either the ns or id fields must differ for 
+/// \details At least one of either the ns or id fields must differ for
 ///         the NamespacedIds to be considered not equal.
 constexpr bool NamespacedId::operator!=(const NamespacedId& other) const noexcept {
    return !(*this == other);

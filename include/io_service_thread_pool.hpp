@@ -24,7 +24,7 @@ public:
    void threads(std::size_t new_size);
 
    IoService io_service;
-   
+
 private:
    void shutdown_(std::unique_lock<std::mutex> lock);
    void shrink_(std::unique_lock<std::mutex> lock);

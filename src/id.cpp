@@ -46,7 +46,7 @@ U64 hash(const S& name) {
    IdNamesMap& names = get_names();
    std::mutex& mutex = get_names_mutex();
    std::lock_guard<std::mutex> lock(mutex);
-   
+
    auto i(names.find(hash));
    if (i != names.end()) {
       // Check for collision with any previously hashed name
@@ -55,7 +55,7 @@ U64 hash(const S& name) {
       }
    } else {
       // Save this name/hash for future checks
-      names[hash] = name;          
+      names[hash] = name;
    }
 
 #endif

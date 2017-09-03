@@ -6,7 +6,7 @@
 #include "log_expr.hpp"
 #include "ostream_config.hpp"
 
-namespace be { 
+namespace be {
 
 class Log;
 

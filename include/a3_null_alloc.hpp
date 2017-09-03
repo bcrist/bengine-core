@@ -76,7 +76,7 @@ public:
    std::size_t size() const {
       return 0;
    }
-   
+
 };
 
 } // be::a3

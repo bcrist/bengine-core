@@ -153,7 +153,7 @@ template<> struct std::hash<be::Id> final {
    ///         hashcode.  In 32-bit builds, the upper half of the value is
    ///         XORed with the lower 32 bits to yield a 32-bit \c std::size_t result.
    /// \param id The Id to hash.
-   /// \return A hashcode suitable for use in hashtable-based data structures.   
+   /// \return A hashcode suitable for use in hashtable-based data structures.
    constexpr std::size_t operator()(const be::Id& id) const noexcept {
       return hash_(id, be::t::SizeTag<std::size_t>());
    }

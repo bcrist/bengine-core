@@ -16,7 +16,7 @@ TEST_CASE("be::SimpleSingleThreadExecutor", BE_CATCH_TAGS) {
    REQUIRE(!executor.running());
    REQUIRE(executor.empty());
    REQUIRE(executor.size() == 0);
-   
+
    executor.post([&]() { ++a; });
    REQUIRE(!executor.empty());
    REQUIRE(executor.size() == 1);
@@ -45,7 +45,7 @@ TEST_CASE("be::SimpleSingleThreadExecutor", BE_CATCH_TAGS) {
          executor.shutdown(false);
          REQUIRE(executor);
          REQUIRE(!executor.running());
-         
+
          executor.post([&]() { ++a; });
          REQUIRE(!executor.empty());
          REQUIRE(executor.size() == 1);

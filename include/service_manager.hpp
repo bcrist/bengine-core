@@ -84,7 +84,7 @@ public:
       for (Id id : traits::preemptive_ids) {
          construct_(named_services_[id], id);
       }
-      
+
       if (log) {
          be_short_debug() << name_func()() << " service manager initialized." || *log;
       }
@@ -130,12 +130,12 @@ public:
    void shutdown() {
       assert(!is_shutdown_);
       is_shutdown_ = true;
-      
+
       Log* log = log_();
       if (log) {
          be_short_debug() << "Shutting down " << name_func()() << " service manager..." || *log;
       }
-      
+
       for (auto it = construction_order_.rbegin(); it != construction_order_.rend(); ++it) {
          unique_service& service = *(it->second);
          if (service) {

@@ -119,7 +119,7 @@ void ConsoleLogSink::operator()(const LogRecord& rec, Log& log) {
 
    auto originalConfig = get_ostream_config(*os);
    *os << std::dec << std::setfill(' ') << std::boolalpha << std::defaultfloat << std::left;
-   
+
    if (rec.short_form) {
       last_rec_was_short_form_ = true;
 

@@ -120,7 +120,7 @@ int open_logging(lua_State* L) {
    lua_pushinteger(L, (lua_Integer)v::verbose_or_worse); lua_setfield(L, -2, "verbose_or_worse");
    lua_pushinteger(L, (lua_Integer)v::debug_or_worse); lua_setfield(L, -2, "debug_or_worse");
    lua_pushinteger(L, (lua_Integer)v::everything); lua_setfield(L, -2, "everything");
-   
+
    lua_setfield(L, -2, "v");
 
    return 1;

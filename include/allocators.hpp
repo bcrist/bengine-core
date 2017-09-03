@@ -22,7 +22,7 @@
 #include "a3_bitmapped_chunk_alloc.hpp"
 
 // Adapter allocators
-#include "a3_cascading_alloc.hpp"            // allocates from one of a growable list of identically-typed allocators.  If the allocator implements getOwner deallocation is very efficient; otherwise it involves a linear search through the list of allocators in MRU order.  If allocation from the current head allocator fails, 
+#include "a3_cascading_alloc.hpp"            // allocates from one of a growable list of identically-typed allocators.  If the allocator implements getOwner deallocation is very efficient; otherwise it involves a linear search through the list of allocators in MRU order.  If allocation from the current head allocator fails,
 #include "a3_fallback_alloc.hpp"             // allocates to another allocator if allocation in the primary allocator fails
 #include "a3_size_discriminator_alloc.hpp"   // delegates to one allocator if requested size is <= some value, or another one otherwise.
 #include "a3_linear_size_partitioner_alloc.hpp"  // equivalent to a series of SizeDiscriminatorAllocs where each manages an equal part of the range of supported sizes
