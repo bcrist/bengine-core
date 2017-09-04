@@ -5,7 +5,8 @@
 #include "log_attrib_ids.hpp"
 #include "log_expr_ops.hpp"
 #include "log_handle.hpp"
-#include "service_log.hpp"
+#include "default_log.hpp"
+#include "service.hpp"
 #include <unordered_map>
 #include <vector>
 #include <cassert>

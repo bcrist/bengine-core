@@ -83,6 +83,7 @@
     <ClInclude Include="include\alg.hpp" />
     <ClInclude Include="include\allocators.hpp" />
     <ClInclude Include="include\autolink.hpp" />
+    <ClInclude Include="include\default_log.hpp" />
     <ClInclude Include="include\enum_traits.hpp" />
     <ClInclude Include="include\extents.hpp" />
     <ClInclude Include="include\extents_bo.hpp" />
@@ -224,7 +225,7 @@
     <ClCompile Include="src\service_io_service_thread_pool.cpp" />
     <ClCompile Include="src\service_io_service.cpp" />
     <ClCompile Include="src\log_processor.cpp" />
-    <ClCompile Include="src\service_log.cpp" />
+    <ClCompile Include="src\default_log.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

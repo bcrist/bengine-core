@@ -5,8 +5,8 @@
 #include "service_ids.hpp"
 #include "log_processor.hpp"
 #include "service_simple_single_thread_executor.hpp"
-#include "service.hpp"
 #include "service_manager.hpp"
+#include "service_helpers.hpp"
 
 namespace be {
 

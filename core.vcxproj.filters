@@ -468,6 +468,9 @@
     <ClInclude Include="include\log_exception.hpp">
       <Filter>Header Files\logging</Filter>
     </ClInclude>
+    <ClInclude Include="include\default_log.hpp">
+      <Filter>Header Files\logging</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -536,9 +539,6 @@
     <ClCompile Include="src\service_io_service.cpp">
       <Filter>Source Files\io</Filter>
     </ClCompile>
-    <ClCompile Include="src\service_log.cpp">
-      <Filter>Source Files\logging</Filter>
-    </ClCompile>
     <ClCompile Include="src\service_simple_single_thread_executor.cpp">
       <Filter>Source Files\executors</Filter>
     </ClCompile>
@@ -561,6 +561,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\log_exception.cpp">
+      <Filter>Source Files\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="src\default_log.cpp">
       <Filter>Source Files\logging</Filter>
     </ClCompile>
   </ItemGroup>
