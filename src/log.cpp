@@ -1,7 +1,6 @@
 #include "pch.hpp"
 #include "log.hpp"
 #include "service_ids.hpp"
-#include "console_log_sink.hpp"
 #include "service_simple_single_thread_executor.hpp"
 #include "service_helpers.hpp"
 
@@ -10,16 +9,12 @@ namespace be {
 ///////////////////////////////////////////////////////////////////////////////
 Log::Log()
    : mask_(BE_CORE_DEFAULT_LOG_VERBOSITY_MASK)
-{
-   sink(ConsoleLogSink());
-}
+{ }
 
 ///////////////////////////////////////////////////////////////////////////////
 Log::Log(U16 mask)
    : mask_(mask)
-{
-   sink(ConsoleLogSink());
-}
+{ }
 
 ///////////////////////////////////////////////////////////////////////////////
 void Log::reset() {
@@ -33,7 +28,9 @@ void Log::clear_sinks() {
 
 ///////////////////////////////////////////////////////////////////////////////
 void Log::sink(LogSink sink) {
-   sinks_.push_back(std::move(sink));
+   if (sink) {
+      sinks_.push_back(std::move(sink));
+   }
 }
 
 ///////////////////////////////////////////////////////////////////////////////

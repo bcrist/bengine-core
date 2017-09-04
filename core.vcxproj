@@ -138,6 +138,7 @@
     <ClInclude Include="include\t_integer.hpp" />
     <ClInclude Include="include\t_is_char.hpp" />
     <ClInclude Include="include\version.hpp" />
+    <ClInclude Include="include\void_log.hpp" />
     <ClInclude Include="include\work_queues.hpp" />
     <ClInclude Include="include\service_atomic.hpp" />
     <ClInclude Include="include\service_io_service_thread_pool.hpp" />
@@ -232,6 +233,7 @@
     <ClCompile Include="src\service_simple_single_thread_executor.cpp" />
     <ClCompile Include="src\stack_trace.cpp" />
     <ClCompile Include="src\time.cpp" />
+    <ClCompile Include="src\void_log.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="include\buf.inl" />
