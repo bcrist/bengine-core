@@ -48,17 +48,31 @@ int logging_log(lua_State* L) {
          LogRecord rec;
          be_log(V, source) & short_form(ShortForm) << msg || rec;
 
-         lua_settop(L, 2);
-         lua_pushnil(L);
-         while (lua_next(L, 2) != 0)
-         {
-            // ... (-2) ? key (-1) ? value
-            const char* key = luaL_tolstring(L, -2, nullptr);  // ... (-3) ? key (-2) ? value (-1) str key
-            const char* val = luaL_tolstring(L, -2, nullptr);  // ... (-4) ? key (-3) ? value (-2) str key (-1) str value
+         if (lua_gettop(L) >= 3 && lua_type(L, 3) == LUA_TTABLE) {
+            std::size_t n = std::min(lua_rawlen(L, 2), lua_rawlen(L, 3));
+            lua_settop(L, 3);
+            for (std::size_t i = 1; i <= n; ++i) {
+               lua_rawgeti(L, 2, i);
+               lua_rawgeti(L, 3, i);
+               const char* key = luaL_tolstring(L, -2, nullptr);
+               const char* val = luaL_tolstring(L, -2, nullptr);
 
-            log_nil() & attr(key) << S(val) || rec;
+               log_nil() & attr(key) << S(val) || rec;
 
-            lua_pop(L, 3);                                     // ... (-1) ? key
+               lua_pop(L, 4);
+            }
+         } else {
+            lua_settop(L, 2);
+            lua_pushnil(L);
+            while (lua_next(L, 2) != 0) {
+               // ... (-2) ? key (-1) ? value
+               const char* key = luaL_tolstring(L, -2, nullptr);  // ... (-3) ? key (-2) ? value (-1) str key
+               const char* val = luaL_tolstring(L, -2, nullptr);  // ... (-4) ? key (-3) ? value (-2) str key (-1) str value
+
+               log_nil() & attr(key) << S(val) || rec;
+
+               lua_pop(L, 3);                                     // ... (-1) ? key
+            }
          }
 
          rec | log;
