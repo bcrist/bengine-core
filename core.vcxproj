@@ -82,7 +82,6 @@
     <ClInclude Include="include\a3_vmm_alloc.hpp" />
     <ClInclude Include="include\alg.hpp" />
     <ClInclude Include="include\allocators.hpp" />
-    <ClInclude Include="include\autolink.hpp" />
     <ClInclude Include="include\default_log.hpp" />
     <ClInclude Include="include\enum_traits.hpp" />
     <ClInclude Include="include\extents.hpp" />
@@ -104,7 +103,6 @@
     <ClInclude Include="include\console_color.hpp" />
     <ClInclude Include="include\console_indent.hpp" />
     <ClInclude Include="include\console_log_sink.hpp" />
-    <ClInclude Include="include\core_autolink.hpp" />
     <ClInclude Include="include\exceptions.hpp" />
     <ClInclude Include="include\id_collision_handler.hpp" />
     <ClInclude Include="include\lifecycle.hpp" />

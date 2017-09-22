@@ -11,8 +11,6 @@
 #include <DbgHelp.h>
 #pragma warning(pop)
 
-#pragma comment(lib, "Dbghelp.lib")
-
 namespace be {
 namespace {
 

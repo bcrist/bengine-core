@@ -54,7 +54,6 @@
   <ItemGroup>
     <ClInclude Include="include\lua_id.hpp" />
     <ClInclude Include="include\lua_logging.hpp" />
-    <ClInclude Include="include\core_lua_autolink.hpp" />
     <ClInclude Include="include\lua_modules.hpp" />
     <ClInclude Include="include\lua_time.hpp" />
   </ItemGroup>

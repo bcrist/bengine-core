@@ -35,15 +35,6 @@
 #undef BE_ID_NAMES_DISABLED
 #endif
 
-#ifndef BE_CORE_ID_IMPL
-#ifdef BE_ID_NAMES_ENABLED
-#define BE_AUTOLINK_LIB "core-id-with-names"
-#else
-#define BE_AUTOLINK_LIB "core-id"
-#endif
-#include "autolink.hpp"
-#endif
-
 namespace be {
 
 ///////////////////////////////////////////////////////////////////////////////

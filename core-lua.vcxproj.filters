@@ -23,9 +23,6 @@
     <ClInclude Include="include\lua_time.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\core_lua_autolink.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src-lua\lua_id.cpp">

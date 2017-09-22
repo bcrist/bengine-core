@@ -41,6 +41,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <Link>
+      <AdditionalDependencies>testing-debug.lib;core-id-with-names-debug.lib;core-debug.lib;zlib-static-debug.lib;perf-debug.lib;Dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <Link>
+      <AdditionalDependencies>testing.lib;core-id-with-names.lib;core.lib;zlib-static.lib;perf.lib;Dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="perf\perf_logging.cpp" />
     <ClCompile Include="perf\perf_main.cpp" />

@@ -39,7 +39,6 @@ bool is_main_thread();
 
 } // be
 
-#include "core_autolink.hpp"
 #include "memory.hpp"
 
 #endif

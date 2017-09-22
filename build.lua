@@ -11,7 +11,10 @@ module 'core' {
          'src/native/$(toolchain)/*.cpp'
       },
       define 'BE_CORE_IMPL',
-      link_project 'zlib-static'
+      link_project 'zlib-static',
+      toolchain 'vc_win' {
+         link 'Dbghelp.lib'
+      }
    },
    lib '-id' {
       src { 'src/id.cpp', 'src/namespaced_id.cpp' },

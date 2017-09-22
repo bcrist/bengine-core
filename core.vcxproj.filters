@@ -225,12 +225,6 @@
     <ClInclude Include="include\ostream_config.hpp">
       <Filter>Header Files\console</Filter>
     </ClInclude>
-    <ClInclude Include="include\autolink.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\core_autolink.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\macros.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
