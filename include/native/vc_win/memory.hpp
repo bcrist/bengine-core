@@ -54,6 +54,7 @@ using F32 = float;
 using F64 = double;
 
 using S = std::string;
+using SV = std::string_view;
 
 } // be
 

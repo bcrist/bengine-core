@@ -8,7 +8,7 @@
 #include <cassert>
 #include <iosfwd>
 #include <utility>
-#include <gsl/string_span>
+#include <string_view>
 
 namespace be {
 
