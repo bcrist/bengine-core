@@ -6,16 +6,6 @@
 #include <iterator>
 #include <cassert>
 
-#ifdef max
-#pragma message("Undefining max macro!")
-#undef max
-#endif
-
-#ifdef min
-#pragma message("Undefining min macro!")
-#undef max
-#endif
-
 namespace be {
 
 using std::min;
