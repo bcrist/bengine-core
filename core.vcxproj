@@ -84,6 +84,11 @@
     <ClInclude Include="include\allocators.hpp" />
     <ClInclude Include="include\default_log.hpp" />
     <ClInclude Include="include\enum_traits.hpp" />
+    <ClInclude Include="include\enum_vec1.hpp" />
+    <ClInclude Include="include\enum_vec2.hpp" />
+    <ClInclude Include="include\enum_vec3.hpp" />
+    <ClInclude Include="include\enum_vec4.hpp" />
+    <ClInclude Include="include\enum_vec_fwd.hpp" />
     <ClInclude Include="include\extents.hpp" />
     <ClInclude Include="include\extents_bo.hpp" />
     <ClInclude Include="include\filesystem.hpp" />
@@ -235,6 +240,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="include\buf.inl" />
+    <None Include="include\enum_vec1.inl" />
+    <None Include="include\enum_vec2.inl" />
+    <None Include="include\enum_vec3.inl" />
+    <None Include="include\enum_vec4.inl" />
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="natvis\glm.natvis" />

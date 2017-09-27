@@ -468,6 +468,21 @@
     <ClInclude Include="include\void_log.hpp">
       <Filter>Header Files\logging</Filter>
     </ClInclude>
+    <ClInclude Include="include\enum_vec_fwd.hpp">
+      <Filter>Header Files\data types</Filter>
+    </ClInclude>
+    <ClInclude Include="include\enum_vec1.hpp">
+      <Filter>Header Files\data types</Filter>
+    </ClInclude>
+    <ClInclude Include="include\enum_vec2.hpp">
+      <Filter>Header Files\data types</Filter>
+    </ClInclude>
+    <ClInclude Include="include\enum_vec3.hpp">
+      <Filter>Header Files\data types</Filter>
+    </ClInclude>
+    <ClInclude Include="include\enum_vec4.hpp">
+      <Filter>Header Files\data types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -570,6 +585,18 @@
   <ItemGroup>
     <None Include="include\buf.inl">
       <Filter>Header Files\memory</Filter>
+    </None>
+    <None Include="include\enum_vec1.inl">
+      <Filter>Header Files\data types</Filter>
+    </None>
+    <None Include="include\enum_vec2.inl">
+      <Filter>Header Files\data types</Filter>
+    </None>
+    <None Include="include\enum_vec3.inl">
+      <Filter>Header Files\data types</Filter>
+    </None>
+    <None Include="include\enum_vec4.inl">
+      <Filter>Header Files\data types</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

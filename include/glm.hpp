@@ -2,7 +2,7 @@
 #ifndef BE_CORE_GLM_HPP_
 #define BE_CORE_GLM_HPP_
 
-#include "be.hpp"
+#include "enum_vec_fwd.hpp"
 #include <glm/fwd.hpp>
 
 namespace glm {
