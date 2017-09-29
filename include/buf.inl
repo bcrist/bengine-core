@@ -268,7 +268,7 @@ inline Buf<char> tmp_buf(S& source) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-inline Buf<const char> tmp_buf(const S& source) {
+inline Buf<const char> tmp_buf(SV source) {
    return Buf<const char>(source.data(), source.length());
 }
 
