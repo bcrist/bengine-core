@@ -94,6 +94,12 @@
     <Filter Include="Header Files\data types">
       <UniqueIdentifier>{991f19b4-89af-4618-b960-5b9ca48ecf2c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\events">
+      <UniqueIdentifier>{f83f79ad-10ff-4560-87f3-fca795b647dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\events">
+      <UniqueIdentifier>{314eaae3-5bea-4b4c-9e4b-3f3e616df50c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.hpp">
@@ -483,6 +489,27 @@
     <ClInclude Include="include\enum_vec4.hpp">
       <Filter>Header Files\data types</Filter>
     </ClInclude>
+    <ClInclude Include="include\event_dispatcher.hpp">
+      <Filter>Header Files\events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\default_event_dispatcher.hpp">
+      <Filter>Header Files\events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\event_traits.hpp">
+      <Filter>Header Files\events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_unordered_remove.hpp">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="include\service_event_dispatcher.hpp">
+      <Filter>Header Files\events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\event_policies_event_source.hpp">
+      <Filter>Header Files\events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\event_policies_event_type.hpp">
+      <Filter>Header Files\events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -581,6 +608,15 @@
     <ClCompile Include="src\void_log.cpp">
       <Filter>Source Files\logging</Filter>
     </ClCompile>
+    <ClCompile Include="src\event_dispatcher.cpp">
+      <Filter>Source Files\events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\service_event_dispatcher.cpp">
+      <Filter>Source Files\events</Filter>
+    </ClCompile>
+    <ClCompile Include="include\event_type.hpp">
+      <Filter>Header Files\events</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\buf.inl">
@@ -597,6 +633,12 @@
     </None>
     <None Include="include\enum_vec4.inl">
       <Filter>Header Files\data types</Filter>
+    </None>
+    <None Include="include\event_dispatcher.inl">
+      <Filter>Header Files\events</Filter>
+    </None>
+    <None Include="include\default_event_dispatcher.inl">
+      <Filter>Header Files\events</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

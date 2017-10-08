@@ -32,7 +32,7 @@ const std::array<Id, 0> ServiceTraits<ServiceType>::preemptive_ids;
 ///////////////////////////////////////////////////////////////////////////////
 template <typename ServiceType>
 struct ServiceName {
-   S operator()() {
+   SV operator()() {
      return type_name<ServiceType>();
    }
 };

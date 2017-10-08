@@ -5,7 +5,7 @@
    {'IO_SERVICE_THREAD_POOL_LOCAL', 'io-service-thread-pool:local'},
    {'IO_SERVICE_THREAD_POOL_NETWORK', 'io-service-thread-pool:network'},
 
-   {'SIMPLE_SINGLE_THREAD_EXECUTOR_LOGPROCESSING', 'simple_single_thread_executor:log-processing'}
+   {'SIMPLE_SINGLE_THREAD_EXECUTOR_LOGPROCESSING', 'simple-single-thread-executor:log-processing'}
 
 }) !! 48 */
 /* ################# !! GENERATED CODE -- DO NOT MODIFY !! ################# */
@@ -21,8 +21,8 @@
 #define  BEID_CORE_SERVICE_IO_SERVICE_THREAD_POOL_LOCAL                0x86241FA8A1F08109
 #define BEIDN_CORE_SERVICE_IO_SERVICE_THREAD_POOL_NETWORK              "be:core:service:io-service-thread-pool:network"
 #define  BEID_CORE_SERVICE_IO_SERVICE_THREAD_POOL_NETWORK              0x0C428BC90632BB50
-#define BEIDN_CORE_SERVICE_SIMPLE_SINGLE_THREAD_EXECUTOR_LOGPROCESSING "be:core:service:simple_single_thread_executor:log-processing"
-#define  BEID_CORE_SERVICE_SIMPLE_SINGLE_THREAD_EXECUTOR_LOGPROCESSING 0xF3D674A015459746
+#define BEIDN_CORE_SERVICE_SIMPLE_SINGLE_THREAD_EXECUTOR_LOGPROCESSING "be:core:service:simple-single-thread-executor:log-processing"
+#define  BEID_CORE_SERVICE_SIMPLE_SINGLE_THREAD_EXECUTOR_LOGPROCESSING 0x3DC9CF096C8B2F00
 
 #ifdef BE_ID_EXTERNS
 

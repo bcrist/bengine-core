@@ -82,6 +82,7 @@
     <ClInclude Include="include\a3_vmm_alloc.hpp" />
     <ClInclude Include="include\alg.hpp" />
     <ClInclude Include="include\allocators.hpp" />
+    <ClInclude Include="include\default_event_dispatcher.hpp" />
     <ClInclude Include="include\default_log.hpp" />
     <ClInclude Include="include\enum_traits.hpp" />
     <ClInclude Include="include\enum_vec1.hpp" />
@@ -89,6 +90,10 @@
     <ClInclude Include="include\enum_vec3.hpp" />
     <ClInclude Include="include\enum_vec4.hpp" />
     <ClInclude Include="include\enum_vec_fwd.hpp" />
+    <ClInclude Include="include\event_dispatcher.hpp" />
+    <ClInclude Include="include\event_policies_event_source.hpp" />
+    <ClInclude Include="include\event_policies_event_type.hpp" />
+    <ClInclude Include="include\event_traits.hpp" />
     <ClInclude Include="include\extents.hpp" />
     <ClInclude Include="include\extents_bo.hpp" />
     <ClInclude Include="include\filesystem.hpp" />
@@ -124,6 +129,7 @@
     <ClInclude Include="include\native\vc_win\vc_win.hpp" />
     <ClInclude Include="include\native\vc_win\vc_win_win32.hpp" />
     <ClInclude Include="include\ostream_config.hpp" />
+    <ClInclude Include="include\service_event_dispatcher.hpp" />
     <ClInclude Include="include\service_priority_inline_executor.hpp" />
     <ClInclude Include="include\service_priority_single_thread_executor.hpp" />
     <ClInclude Include="include\service_priority_thread_pool_executor.hpp" />
@@ -140,6 +146,7 @@
     <ClInclude Include="include\t_covering_unsigned.hpp" />
     <ClInclude Include="include\t_integer.hpp" />
     <ClInclude Include="include\t_is_char.hpp" />
+    <ClInclude Include="include\t_unordered_remove.hpp" />
     <ClInclude Include="include\version.hpp" />
     <ClInclude Include="include\void_log.hpp" />
     <ClInclude Include="include\work_queues.hpp" />
@@ -185,8 +192,10 @@
     <ClInclude Include="include\wrapped_allocator.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\event_type.hpp" />
     <ClCompile Include="src\a3_vmm_alloc.cpp" />
     <ClCompile Include="src\alg.cpp" />
+    <ClCompile Include="src\event_dispatcher.cpp" />
     <ClCompile Include="src\exceptions.cpp" />
     <ClCompile Include="src\filesystem.cpp" />
     <ClCompile Include="src\io_service_thread_pool.cpp" />
@@ -226,6 +235,7 @@
     <ClCompile Include="src\native\vc_win\time.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\service_event_dispatcher.cpp" />
     <ClCompile Include="src\service_io_service_thread_pool.cpp" />
     <ClCompile Include="src\service_io_service.cpp" />
     <ClCompile Include="src\log_processor.cpp" />
@@ -240,10 +250,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="include\buf.inl" />
+    <None Include="include\default_event_dispatcher.inl" />
     <None Include="include\enum_vec1.inl" />
     <None Include="include\enum_vec2.inl" />
     <None Include="include\enum_vec3.inl" />
     <None Include="include\enum_vec4.inl" />
+    <None Include="include\event_dispatcher.inl" />
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="natvis\glm.natvis" />

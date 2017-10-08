@@ -59,12 +59,16 @@
     <ClCompile Include="test\test_a3_static_alloc.cpp" />
     <ClCompile Include="test\test_a3_vmm_alloc.cpp" />
     <ClCompile Include="test\test_buf.cpp" />
+    <ClCompile Include="test\test_event_dispatcher.cpp" />
     <ClCompile Include="test\test_inline_executors.cpp" />
     <ClCompile Include="test\test_single_thread_executors.cpp" />
     <ClCompile Include="test\test_stack_trace.cpp" />
     <ClCompile Include="test\test_main.cpp" />
     <ClCompile Include="test\test_thread_pool_executors.cpp" />
     <ClCompile Include="test\version.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="test\ensure_init.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

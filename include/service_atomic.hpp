@@ -22,7 +22,18 @@ struct ServiceTraits<std::atomic<T>> : ServiceTraits<> {
 template <typename T>
 struct ServiceName<std::atomic<T>> {
    S operator()() {
-      return "atomic<" + type_name<T>() + ">";
+      using namespace std::string_view_literals;
+      S name;
+      SV prefix = "atomic<"sv;
+      SV type = type_name<T>();
+      SV suffix = ">"sv;
+      
+      name.reserve(prefix.size() + type.size() + suffix.size());
+      name.append(prefix);
+      name.append(type);
+      name.append(suffix);
+
+      return name;
    }
 };
 

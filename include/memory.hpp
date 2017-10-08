@@ -48,15 +48,16 @@ struct Converter;
 } // be::bo
 
 template <typename T>
-S type_name() {
-   S name = typeid(T).name();
-   S test = "class ";
-   if (std::equal(test.begin(), test.end(), name.begin(), name.end())) {
-      name.erase(0, test.length());
+SV type_name() noexcept {
+   using namespace std::string_view_literals;
+   SV name = SV(typeid(T).name());
+   SV test = "class "sv;
+   if (name.substr(0, test.size()) == test) {
+      name.remove_prefix(test.size());
    } else {
-      test = "struct ";
-      if (std::equal(test.begin(), test.end(), name.begin(), name.end())) {
-         name.erase(0, test.length());
+      test = "struct "sv;
+      if (name.substr(0, test.size()) == test) {
+         name.remove_prefix(test.size());
       }
    }
    return name;
