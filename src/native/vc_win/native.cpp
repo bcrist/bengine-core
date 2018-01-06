@@ -10,6 +10,7 @@
 
 namespace be {
 
+#pragma warning (push)
 #pragma warning (disable : 4996)
 ///////////////////////////////////////////////////////////////////////////////
 S os_version() {
@@ -22,7 +23,6 @@ S os_version() {
    }
    return "Unknown";
 }
-#pragma warning (default : 4996)
 
 ///////////////////////////////////////////////////////////////////////////////
 std::locale default_locale() {
@@ -32,6 +32,7 @@ std::locale default_locale() {
    std::locale base_locale = boost::locale::generator()("en_US.UTF-8");
    return std::locale(base_locale, new std::codecvt_utf8_utf16<wchar_t>);
 }
+#pragma warning (pop)
 
 } // be
 

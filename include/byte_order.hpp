@@ -4,11 +4,11 @@
 
 #include "memory.hpp"
 #include "builtins.hpp"
-#include <boost/detail/endian.hpp>
+#include <boost/predef/other/endian.h>
 
-#ifdef BOOST_BIG_ENDIAN
+#if BOOST_ENDIAN_BIG_BYTE
 #define BE_BIG_ENDIAN
-#elif defined(BOOST_LITTLE_ENDIAN)
+#elif BOOST_ENDIAN_LITTLE_BYTE
 #define BE_LITTLE_ENDIAN
 #endif
 
