@@ -329,6 +329,11 @@ generic_extents<T, U> make_extents(T t, U u) {
    return generic_extents<T, U> { t, u };
 }
 
+template <typename T, typename U = T>
+generic_extents<T, U> make_extents_from_min_max(T t, T u) {
+   return generic_extents<T, U> { t, static_cast<U>(u) - static_cast<U>(t) };
+}
+
 } // be
 
 #endif

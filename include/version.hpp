@@ -6,7 +6,7 @@
 
 #define BE_CORE_VERSION_MAJOR 0
 #define BE_CORE_VERSION_MINOR 1
-#define BE_CORE_VERSION_REV 25
+#define BE_CORE_VERSION_REV 26
 
 /*!! include('common/version', 'BE_CORE', 'bengine') !! 6 */
 /* ################# !! GENERATED CODE -- DO NOT MODIFY !! ################# */
