@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectName>core-lua</ProjectName>
     <RootNamespace>core</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
     <ProjectGuid>{07FA65B2-E314-490A-B33F-A05BCC38C1B8}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
