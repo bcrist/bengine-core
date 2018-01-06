@@ -32,8 +32,9 @@ struct GetResultType<T, std::void_t<typename T::result_type>> {
 /// \brief  Determines if a type implements the requirements for a seed
 ///         sequence.
 /// \details see http://en.cppreference.com/w/cpp/concept/SeedSequence
+/// \tparam T 
 template <typename T, typename S, typename E = S,
-   typename D = typename std::decay<T>::type,
+   typename D = std::decay_t<T>,
    bool = !std::is_convertible<D, detail::GetResultType<D>::type>::value &&
    !std::is_same<D, S>::value &&
    !std::is_same<D, E>::value &&
