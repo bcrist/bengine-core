@@ -163,7 +163,7 @@ Buf<T, true>::Buf(Buf<U>&& other)
 ///////////////////////////////////////////////////////////////////////////////
 template <typename T>
 Buf<T, true>& Buf<T, true>::operator=(Buf<T, true>&& other) {
-   assign_(other);
+   this->assign_(other);
    return *this;
 }
 
@@ -253,6 +253,12 @@ Buf<T> tmp_buf(T (&arr)[N]) {
 template <typename T>
 Buf<T> tmp_buf(Buf<T>& source) {
    return Buf<T>(source.get(), source.size());
+}
+
+///////////////////////////////////////////////////////////////////////////////
+template <typename T>
+Buf<const T> tmp_const_buf(const Buf<T>& source) {
+   return Buf<const T>(source.get(), source.size());
 }
 
 ///////////////////////////////////////////////////////////////////////////////
