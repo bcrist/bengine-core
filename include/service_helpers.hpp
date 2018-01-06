@@ -36,6 +36,12 @@ ServiceType* optional_service(Id id) {
    return detail::get_service_manager<ServiceType>().optional(id);
 }
 
+///////////////////////////////////////////////////////////////////////////////
+template <typename ServiceType>
+void shutdown_service() {
+   return detail::get_service_manager<ServiceType>().shutdown();
+}
+
 } // be
 
 #endif
