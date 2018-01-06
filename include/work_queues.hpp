@@ -52,7 +52,7 @@ public:
    }
 
    std::function<void()> poll() {
-      std::function<void()> func;
+      std::function<void()> func { };
       if (!q_.empty()) {
          func = std::move(q_.top().second);
          q_.pop();
@@ -92,7 +92,7 @@ public:
    }
 
    std::function<void()> poll() {
-      std::function<void()> func;
+      std::function<void()> func { };
       if (!q_.empty()) {
          func = std::move(q_.front());
          q_.pop();
