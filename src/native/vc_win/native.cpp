@@ -27,7 +27,7 @@ S os_version() {
 ///////////////////////////////////////////////////////////////////////////////
 std::locale default_locale() {
    auto locmgr = boost::locale::localization_backend_manager::global();
-   locmgr.select("std");
+   locmgr.select("winapi");
    boost::locale::localization_backend_manager::global(locmgr);
    std::locale base_locale = boost::locale::generator()("en_US.UTF-8");
    return std::locale(base_locale, new std::codecvt_utf8_utf16<wchar_t>);
