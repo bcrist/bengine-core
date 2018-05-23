@@ -47,6 +47,9 @@
     <ClCompile Include="test\test_event_dispatcher.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
+    <ClCompile Include="test\test_ref_ptr.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test\ensure_init.hpp" />

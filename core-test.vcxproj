@@ -61,6 +61,7 @@
     <ClCompile Include="test\test_buf.cpp" />
     <ClCompile Include="test\test_event_dispatcher.cpp" />
     <ClCompile Include="test\test_inline_executors.cpp" />
+    <ClCompile Include="test\test_ref_ptr.cpp" />
     <ClCompile Include="test\test_single_thread_executors.cpp" />
     <ClCompile Include="test\test_stack_trace.cpp" />
     <ClCompile Include="test\test_main.cpp" />

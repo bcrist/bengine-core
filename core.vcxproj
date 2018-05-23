@@ -129,6 +129,7 @@
     <ClInclude Include="include\native\vc_win\vc_win.hpp" />
     <ClInclude Include="include\native\vc_win\vc_win_win32.hpp" />
     <ClInclude Include="include\ostream_config.hpp" />
+    <ClInclude Include="include\ref_ptr.hpp" />
     <ClInclude Include="include\service_event_dispatcher.hpp" />
     <ClInclude Include="include\service_priority_inline_executor.hpp" />
     <ClInclude Include="include\service_priority_single_thread_executor.hpp" />

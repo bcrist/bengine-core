@@ -513,6 +513,9 @@
     <ClInclude Include="include\event_type.hpp">
       <Filter>Header Files\events</Filter>
     </ClInclude>
+    <ClInclude Include="include\ref_ptr.hpp">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
