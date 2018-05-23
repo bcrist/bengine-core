@@ -3,6 +3,7 @@
 #define BE_CORE_LOG_EXPR_OPS_HPP_
 
 #include "log.hpp"
+#include "default_log.hpp"
 #include "stack_trace.hpp"
 
 #define be_log(...)    ::be::log(__VA_ARGS__).filename(__FILE__).line(__LINE__)
@@ -147,7 +148,7 @@ bool operator||(LogExpr<L>&& expr, Log& log) {
 ///////////////////////////////////////////////////////////////////////////////
 template <typename L>
 void operator||(LogExpr<L>&& expr, LogRecord& rec) {
-   LogProcessor<L> processor(default_log(), rec);
+   LogProcessor<L> processor { default_log(), rec };
    processor(expr);
 }
 

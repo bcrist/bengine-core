@@ -2,16 +2,11 @@
 #ifndef BE_CORE_LOG_PROCESSOR_HPP_
 #define BE_CORE_LOG_PROCESSOR_HPP_
 
-#include "log_record.hpp"
-#include "log_expr.hpp"
+#include "log.hpp"
 #include "ostream_config.hpp"
 
 namespace be {
-
-class Log;
-
 namespace detail {
-
 ///////////////////////////////////////////////////////////////////////////////
 void handle_log_record(const LogRecord& record, Log& log);
 
@@ -132,7 +127,6 @@ struct LogProcessorTask {
    Log& log;
    const E log_expr;
 };
-
 } // be::detail
 } // be
 
